@@ -1,3 +1,6 @@
+//GENERATRON
+
+
 let angle = 0;
 let fr = 60;
 let myFont;
@@ -108,7 +111,7 @@ function mouseReleased()
 function keyTyped()
 {
   //SYNTH
-  if (key == 's', 'S') //plays synth
+  if (key == 's') //plays synth
   {
     console.log(drums.isPlaying()+0);
     
@@ -124,7 +127,7 @@ function keyTyped()
   }
   
   //BASS
-  if (key == 'b', 'B') //plays synth
+  if (key == 'b') //plays synth
   {    
     if (bass.isPlaying())
     {
@@ -138,7 +141,7 @@ function keyTyped()
   }
   
   //SYNTH 2 (PLUCKS)
-  if (key == 'd', 'D') //plays synth
+  if (key == 'd') //plays synth
   {    
     if (plucks.isPlaying())
     {
