@@ -6,6 +6,9 @@ html, body
   padding: 0;
   background-color: black;
   font-family: 'Space Grotesk', sans-serif;
+  /*remove annoying horizontal scroll*/
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 canvas
@@ -22,6 +25,12 @@ canvas
   height: 3rem;
 }
 
+.logo a
+{
+  display: inline-block;
+  padding-left: 2rem;
+}
+
 h1, h2, h3, h4, h5, h6
 {
   color:white;
@@ -29,17 +38,40 @@ h1, h2, h3, h4, h5, h6
   padding-left: 2rem;
 }
 
-.soft-version
+.controls p
 {
-  margin-top: 0.5rem;
-  opacity:0.6;
-  text-transform: uppercase;
+  color:white;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 p
 {
   color:white;
-  padding-right: 2rem;
+}
+
+a
+{
+  color: white;
+  margin-top: 0;
+}
+
+a:hover
+{
+  color: #0066FF;
+}
+
+a:active
+{
+  color: #003380;
+}
+
+.soft-version
+{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  opacity:0.6;
+  text-transform: uppercase;
 }
 
 button /*, rec-button -- this one too*/

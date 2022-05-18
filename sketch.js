@@ -33,7 +33,7 @@ function preload()
 
 function setup()
 {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  var canvas = createCanvas(windowWidth, windowHeight, WEBGL);  
   //background(0); already set in style.css
   
   frameRate(fr); //Attempt to refresh at starting FPS
