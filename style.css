@@ -72,6 +72,11 @@ button:active
   background-color: #003380;
 }
 
+.rec-button
+{
+  padding-left: 2rem;
+}
+
 
 /* ---- STRUCTURE ---- */
 .header
