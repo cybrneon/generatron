@@ -13,6 +13,15 @@ canvas
   display: block;
 }
 
+.logo img
+{
+  padding: auto;
+  display: block;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  height: 3rem;
+}
+
 h1, h2, h3, h4, h5, h6
 {
   color:white;
@@ -22,7 +31,9 @@ h1, h2, h3, h4, h5, h6
 
 .soft-version
 {
+  margin-top: 0.5rem;
   opacity:0.6;
+  text-transform: uppercase;
 }
 
 p
@@ -31,7 +42,7 @@ p
   padding-right: 2rem;
 }
 
-button, rec-button
+button /*, rec-button -- this one too*/
 {
   display:inline-block;
   padding:0.35em 1.2em;
@@ -40,12 +51,25 @@ button, rec-button
   border-radius:0.12em;
   box-sizing: border-box;
   text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:300;
+  font-family:'Space Grotesk', sans-serif;
   color:white;
   text-align:center;
   transition: all 0.2s;
   background-color: transparent;
+}
+
+button:hover
+{
+  border:0.1em solid #0066FF;
+  font-family:'Space Grotesk', sans-serif;
+  background-color: #0066FF;
+}
+
+button:active
+{
+  border:0.1em solid #003380;
+  font-family:'Space Grotesk', sans-serif;
+  background-color: #003380;
 }
 
 
