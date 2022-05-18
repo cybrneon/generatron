@@ -1,6 +1,14 @@
 //GENERATRON
 
+//  _____ ______ _   _ ______ _____         _______ _____   ____  _   _ 
+//  / ____|  ____| \ | |  ____|  __ \     /\|__   __|  __ \ / __ \| \ | |
+//  | |  __| |__  |  \| | |__  | |__) |   /  \  | |  | |__) | |  | |  \| |
+//  | | |_ |  __| | . ` |  __| |  _  /   / /\ \ | |  |  _  /| |  | | . ` |
+//  | |__| | |____| |\  | |____| | \ \  / ____ \| |  | | \ \| |__| | |\  |
+//  \_____|______|_| \_|______|_|  \_\/_/    \_\_|  |_|  \_\\____/|_| \_|
 
+
+//CODE
 let angle = 0;
 let fr = 60;
 let myFont;
@@ -48,7 +56,9 @@ function setup()
   
   //textFont(myFont);
   //textAlign(LEFT);
-  pixelDensity(4); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
+  pixelDensity(1); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
+  //Hack it up from 4 if you want crisp images for print for exemple
+  //set to 1 because the video recorder can't follow and lags...
 }
 
 function draw()
