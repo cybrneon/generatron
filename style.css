@@ -16,7 +16,7 @@ canvas
 h1, h2, h3, h4, h5, h6
 {
   color:white;
-  aligntext: left;
+  text-align: left;
   padding-left: 2rem;
 }
 
@@ -34,27 +34,34 @@ p
 button, rec-button
 {
   display:inline-block;
- padding:0.35em 1.2em;
- border:0.1em solid #FFFFFF;
- margin:0 0.3em 0.3em 0;
- border-radius:0.12em;
- box-sizing: border-box;
- text-decoration:none;
- font-family:'Roboto',sans-serif;
- font-weight:300;
- color:#FFFFFF;
- text-align:center;
- transition: all 0.2s;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.2s;
 }
 
 
 /* ---- STRUCTURE ---- */
+.header
+{
+  position:fixed;
+  width: 100%;
+}
+
 .flex-divider-top /* used in div class"top" */
 {
-	display: flex;
+	display:flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap:wrap;
 	justify-content: space-between;
 	align-items: stretch;
 	align-content: h;
+  z-index: -999
 }
