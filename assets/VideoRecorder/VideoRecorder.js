@@ -12,7 +12,7 @@
 
 class VideoRecorder {
   static record() {
-    print("recording...");
+    print("Recording...");
 
     this.chunks = [];
     let stream = document.querySelector("canvas").captureStream();
@@ -39,7 +39,7 @@ class VideoRecorder {
       this.recorder.stop();
       this.recorder = null;
       if (this.btn) {
-        this.btn.textContent = "Record video";
+        this.btn.textContent = "Record Video";
         this.btn.onclick = () => this.record();
       }
     }
@@ -47,8 +47,8 @@ class VideoRecorder {
 
   static addButton() {
     this.btn = document.createElement("button");
-    this.btn.innerHTML = "Record video";
-    this.btn.style.margin = "10px";
+    this.btn.innerHTML = "Record Video";
+    //this.btn.style.margin = "10px"; --- not needed
     this.btn.onclick = () => this.record();
     document.body.append(this.btn);
 
@@ -65,7 +65,7 @@ class VideoRecorder {
     vid.id = "recorded";
     vid.controls = true;
     vid.src = url;
-    vid.download = "filename.webm";
+    vid.download = "filename.mp4";
     document.body.appendChild(vid);
     vid.play();
     vid.style.maxWidth = "100%";
@@ -84,9 +84,9 @@ class VideoRecorder {
       "_" +
       ("0" + second()).slice(-2);
     this.lnkDownload = document.createElement("a");
-    this.lnkDownload.innerHTML = "download video<br>";
+    this.lnkDownload.innerHTML = "Download Video<br>";
     this.lnkDownload.href = url;
-    this.lnkDownload.download = "video_" + date + ".webm";
+    this.lnkDownload.download = "video_" + date + ".mp4";
 
     if (this.btn) {
       this.btn.parentNode.insertBefore(this.lnkDownload, this.btn.nextSibling);
