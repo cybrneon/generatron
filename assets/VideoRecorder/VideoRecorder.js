@@ -47,11 +47,11 @@ class VideoRecorder {
 
   static addButton() {
     this.btn = document.createElement("button");
+    this.btn.id = 'rec-button'
     this.btn.innerHTML = "Record Video";
     //this.btn.style.margin = "10px"; --- not needed
     this.btn.onclick = () => this.record();
     document.body.append(this.btn);
-
   }
 
   static exportVideo(e) {

@@ -104,11 +104,11 @@ button:active
   background-color: #003380;
 }
 
-.rec-button
+#rec-button
 {
-  padding-left: 2rem;
   position:absolute;
   z-index: -999;
+  text-align: center;
 }
 
 
@@ -145,21 +145,12 @@ button:active
   align-items: center;
 }
 
-.mobile-control
-{
-  text-align: center;
-  flex-grow: 1;
-  margin: auto;
-  width: 50%;
-  justify-content: center;
-}
-
 .mobile-control button
 {
   width: 100px;
   min-width: 50px;
   display: none;
-
+  margin-left: 20px;
 }
 
 /* show controls on mobile only*/

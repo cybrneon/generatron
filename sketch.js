@@ -46,10 +46,9 @@ function setup()
     return false;
   }
   
-  reverb = new p5.Reverb();
-
   //REVERB
   // reverbTime of 3 seconds, decayRate of 0.2%
+  reverb = new p5.Reverb();
   reverb.process(drums, 3, 0.2);
   reverb.process(bass, 3, 0.2);
   //reverb.amp(4); // turn it up!
@@ -59,6 +58,11 @@ function setup()
   pixelDensity(1); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
   //Hack it up from 4 if you want crisp images for print for exemple
   //set to 1 because the video recorder can't follow and lags...
+
+  /*Mobile controls buttons
+  button = createButton("S");
+  button = createButton("D");
+  button = createButton("B");*/
 }
 
 function draw()
