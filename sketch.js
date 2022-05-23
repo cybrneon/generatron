@@ -78,9 +78,8 @@ function draw()
     }
     if (mouseButton === RIGHT) 
     {
-      sphere(150);
-      fill('#0066ff');
-      stroke('#FF9900');
+      fill('#B1BEC3');
+      stroke('#0066FF');
     }
     if (mouseButton === CENTER) 
     {
