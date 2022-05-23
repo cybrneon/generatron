@@ -11,7 +11,6 @@
 //CODE
 let angle = 0;
 let fr = 60;
-let myFont;
 //let contents = ""; -- removed for the moment
 
 let drums; let synth; let bass; let plucks;
@@ -22,7 +21,6 @@ function preload()
   //preload stuff
   //TEXTURES
   cubeTexture = loadImage('assets/textures/sky.png');
-  //myFont = loadFont('assets/fonts/Syne-Bold.otf');
   
   //SOUNDS  
   drums = loadSound('assets/fx/drums.mp3');
@@ -53,9 +51,9 @@ function setup()
   reverb.process(bass, 3, 0.2);
   //reverb.amp(4); // turn it up!
   
-  //textFont(myFont);
+  //textFont('Space Grotesk');
   //textAlign(LEFT);
-  pixelDensity(1); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
+  pixelDensity(6); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
   //Hack it up from 4 if you want crisp images for print for exemple
   //set to 1 because the video recorder can't follow and lags...
 
@@ -67,8 +65,8 @@ function setup()
 
 function draw()
 {
-  //textSize(32); -- removed for the moment
-  //text(contents, mouseX-400, mouseY-400); -- removed for the moment
+  //textSize(32);
+  //text('Press a key or mouse to start.', 10, 20);
   
   if(mouseIsPressed)
   {

@@ -162,3 +162,38 @@ button:active
     display:flex;
   }
 }
+
+.introductory-text /* The initiator text */
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+#introductory-text-id
+{
+  -moz-animation: cssAnimation 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 5s forwards;
+  /* Opera */
+  animation: cssAnimation 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation
+{
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation
+{
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
+}
