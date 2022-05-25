@@ -1,4 +1,9 @@
 /* ---- DESIGN ---- */
+:root
+{
+  color-scheme: dark; /*puts everything (even scrollbar) into dark mode*/
+}
+
 
 html, body
 {
@@ -43,6 +48,11 @@ h1, h2, h3, h4, h5, h6
   color:white;
   padding-right: 2rem;
   padding-left: 2rem;
+  margin-top: 0px;
+}
+.controls h4
+{
+  margin-bottom: 4px;
 }
 
 p

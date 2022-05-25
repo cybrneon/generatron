@@ -13,7 +13,7 @@ let angle = 0;
 let fr = 60;
 //let contents = ""; -- removed for the moment
 
-let drums; let synth; let bass; let plucks;
+let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp;
 
 
 function preload()
@@ -22,11 +22,23 @@ function preload()
   //TEXTURES
   cubeTexture = loadImage('assets/textures/sky.png');
   
-  //SOUNDS  
-  drums = loadSound('assets/fx/synthwave/drums.mp3');
-  synth = loadSound('assets/fx/synthwave/synth.mp3');
-  bass = loadSound('assets/fx/synthwave/bass.mp3');
-  plucks = loadSound('assets/fx/synthwave/synth2.mp3');
+  //SOUNDS
+  //-DRUMS-//////////////////////////////////////////////
+  drums1 = loadSound('assets/fx/cybrcity/drums_01.mp3');
+  drums2 = loadSound('assets/fx/cybrcity/drums_02.mp3');
+  drums3 = loadSound('assets/fx/cybrcity/drums_03.mp3');
+
+  //-LEAD SYNTH-//////////////////////////////////////////////
+  synth = loadSound('assets/fx/cybrcity/lead.mp3');
+
+  //-BASS-//////////////////////////////////////////////
+  bass = loadSound('assets/fx/cybrcity/bass.mp3');
+
+  //-PLUCKS-//////////////////////////////////////////////
+  plucks = loadSound('assets/fx/cybrcity/synth2.mp3');
+
+  //-ARP-//////////////////////////////////////////////
+  arp = loadSound('assets/fx/cybrcity/arp.mp3');
 }
 
 function setup()
@@ -47,7 +59,7 @@ function setup()
   //REVERB
   // reverbTime of 3 seconds, decayRate of 0.2%
   reverb = new p5.Reverb();
-  reverb.process(drums, 3, 0.2);
+  reverb.process(drums1, 3, 0.2);
   reverb.process(bass, 3, 0.2);
   //reverb.amp(4); // turn it up!
   
@@ -114,12 +126,38 @@ function draw()
 
 function mousePressed()
 {
-    drums.loop();
+  if (mouseButton === LEFT)  
+  {
+    drums1.loop();
+  }
+
+  if (mouseButton === CENTER)  
+  {
+    drums2.loop();
+  }
+
+  if (mouseButton === RIGHT)  
+  {
+    drums3.loop();
+  }
 }
 
 function mouseReleased()
 {
-    drums.stop();
+  if (mouseButton === LEFT)  
+  {  
+    drums1.stop();
+  }
+
+  if (mouseButton === CENTER)  
+  {
+    drums2.stop();
+  }
+
+  if (mouseButton === RIGHT)  
+  {
+    drums3.stop();
+  }
 }
 
 function keyTyped()
@@ -127,7 +165,7 @@ function keyTyped()
   //SYNTH
   if (key == 's') //plays synth
   {
-    console.log(drums.isPlaying()+0);
+    console.log(drums1.isPlaying()+0);
     
     if (synth.isPlaying())
     {
@@ -154,7 +192,7 @@ function keyTyped()
     }
   }
   
-  //SYNTH 2 (PLUCKS)
+  //PLUCKS
   if (key == 'd') //plays synth
   {    
     if (plucks.isPlaying())
@@ -167,6 +205,20 @@ function keyTyped()
       plucks.loop();
     }
   }
+
+    //ARP
+    if (key == 'a') //plays synth
+    {    
+      if (arp.isPlaying())
+      {
+        //.isPlaying() returns a boolean
+        arp.stop();
+      }
+      else 
+      {
+        arp.loop();
+      }
+    }
   
   //save artwork with the P key.
   if (key == 'p')
