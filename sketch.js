@@ -11,7 +11,7 @@
 //CODE
 let angle = 0;
 let fr = 60;
-//let contents = ""; -- removed for the moment
+//let contents = ""; -- Typing Text feature removed for the moment
 
 let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp;
 
@@ -83,7 +83,7 @@ function draw()
   if(mouseIsPressed)
   {
 
-    cursor(HAND);
+    cursor(CROSS);
     if (mouseButton === LEFT) 
     {
       normalMaterial();
@@ -175,6 +175,7 @@ function keyTyped()
     else 
     {
       synth.loop();
+      synth.amp(0.8); //volume
     }
   }
   
@@ -189,6 +190,7 @@ function keyTyped()
     else 
     {
       bass.loop();
+      bass.amp(1); //volume
     }
   }
   
@@ -203,6 +205,7 @@ function keyTyped()
     else 
     {
       plucks.loop();
+      plucks.amp(0.6); //volume
     }
   }
 
@@ -217,13 +220,14 @@ function keyTyped()
       else 
       {
         arp.loop();
+        arp.amp(0.8); //volume
       }
     }
   
   //save artwork with the P key.
   if (key == 'p')
   {
-    save("myCYBRDesign.png");
+    save("GENERATRON_design.png");
   }
   
   if (keyCode == 'BACKSPACE')
