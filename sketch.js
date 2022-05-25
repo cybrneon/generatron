@@ -23,10 +23,10 @@ function preload()
   cubeTexture = loadImage('assets/textures/sky.png');
   
   //SOUNDS  
-  drums = loadSound('assets/fx/drums.mp3');
-  synth = loadSound('assets/fx/synth.mp3');
-  bass = loadSound('assets/fx/bass.mp3');
-  plucks = loadSound('assets/fx/synth2.mp3');
+  drums = loadSound('assets/fx/synthwave/drums.mp3');
+  synth = loadSound('assets/fx/synthwave/synth.mp3');
+  bass = loadSound('assets/fx/synthwave/bass.mp3');
+  plucks = loadSound('assets/fx/synthwave/synth2.mp3');
 }
 
 function setup()
@@ -70,6 +70,8 @@ function draw()
   
   if(mouseIsPressed)
   {
+
+    cursor(HAND);
     if (mouseButton === LEFT) 
     {
       normalMaterial();
@@ -92,6 +94,7 @@ function draw()
   {
     fill(0); // fill color black
     stroke(180);
+    cursor(ARROW);
   }
   
   rectMode(CENTER);
