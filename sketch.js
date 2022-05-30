@@ -23,23 +23,23 @@ function preload()
   cubeTexture = loadImage('assets/textures/sky.png');
   
   //SOUNDS
-  //soundFormats('mp3', 'wav'); //Default is mp3, compatible everywhere.
+  soundFormats('mp3', 'wav', 'aac'); //Default is mp3, compatible everywhere. Wav is greater quality and is seamless in loops, but doesn't work on iOS automatically.
   //-DRUMS-//////////////////////////////////////////////
-  drums1 = loadSound('assets/fx/cybrcity/drums_01.mp3');
-  drums2 = loadSound('assets/fx/cybrcity/drums_02.mp3');
-  drums3 = loadSound('assets/fx/cybrcity/drums_03.mp3');
+  drums1 = loadSound('assets/fx/cybrcity/drums_01.wav');
+  drums2 = loadSound('assets/fx/cybrcity/drums_02.wav');
+  drums3 = loadSound('assets/fx/cybrcity/drums_03.wav');
 
   //-LEAD SYNTH-//////////////////////////////////////////////
-  synth = loadSound('assets/fx/cybrcity/lead.mp3');
+  synth = loadSound('assets/fx/cybrcity/lead.wav');
 
   //-BASS-//////////////////////////////////////////////
-  bass = loadSound('assets/fx/cybrcity/bass.mp3');
+  bass = loadSound('assets/fx/cybrcity/bass.wav');
 
   //-PLUCKS-//////////////////////////////////////////////
-  plucks = loadSound('assets/fx/cybrcity/synth2.mp3');
+  plucks = loadSound('assets/fx/cybrcity/synth2.wav');
 
   //-ARP-//////////////////////////////////////////////
-  arp = loadSound('assets/fx/cybrcity/arp.mp3');
+  arp = loadSound('assets/fx/cybrcity/arp.wav');
 }
 
 function setup()
