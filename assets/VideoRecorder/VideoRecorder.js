@@ -65,7 +65,7 @@ class VideoRecorder {
     vid.id = "recorded";
     vid.controls = true;
     vid.src = url;
-    vid.download = "filename.mp4";
+    vid.download = "filename.webm";
     document.body.appendChild(vid);
     vid.play();
     vid.style.maxWidth = "100%";
@@ -86,7 +86,7 @@ class VideoRecorder {
     this.lnkDownload = document.createElement("a");
     this.lnkDownload.innerHTML = "Download Video<br>";
     this.lnkDownload.href = url;
-    this.lnkDownload.download = "video_" + date + ".mp4";
+    this.lnkDownload.download = "video_" + date + ".webm";
 
     if (this.btn) {
       this.btn.parentNode.insertBefore(this.lnkDownload, this.btn.nextSibling);
