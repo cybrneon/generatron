@@ -23,23 +23,23 @@ function preload()
   cubeTexture = loadImage('assets/textures/sky.png');
   
   //SOUNDS
-  soundFormats('mp3', 'wav');
+  //soundFormats('mp3', 'wav'); //Default is mp3, compatible everywhere.
   //-DRUMS-//////////////////////////////////////////////
-  drums1 = loadSound('assets/fx/cybrcity/drums_01.wav');
-  drums2 = loadSound('assets/fx/cybrcity/drums_02.wav');
-  drums3 = loadSound('assets/fx/cybrcity/drums_03.wav');
+  drums1 = loadSound('assets/fx/cybrcity/drums_01.mp3');
+  drums2 = loadSound('assets/fx/cybrcity/drums_02.mp3');
+  drums3 = loadSound('assets/fx/cybrcity/drums_03.mp3');
 
   //-LEAD SYNTH-//////////////////////////////////////////////
-  synth = loadSound('assets/fx/cybrcity/lead.wav');
+  synth = loadSound('assets/fx/cybrcity/lead.mp3');
 
   //-BASS-//////////////////////////////////////////////
-  bass = loadSound('assets/fx/cybrcity/bass.wav');
+  bass = loadSound('assets/fx/cybrcity/bass.mp3');
 
   //-PLUCKS-//////////////////////////////////////////////
-  plucks = loadSound('assets/fx/cybrcity/synth2.wav');
+  plucks = loadSound('assets/fx/cybrcity/synth2.mp3');
 
   //-ARP-//////////////////////////////////////////////
-  arp = loadSound('assets/fx/cybrcity/arp.wav');
+  arp = loadSound('assets/fx/cybrcity/arp.mp3');
 }
 
 function setup()

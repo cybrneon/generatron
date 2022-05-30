@@ -2,7 +2,7 @@
 {
     "manifest_version": 3,
     "name": "GENERATRON",
-    "version": "0.2.5",
+    "version": "0.3.3",
   
     "codename":"Red Platinum",
     "default_locale": "en",
