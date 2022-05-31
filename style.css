@@ -163,6 +163,19 @@ button:active
   margin-left: 20px;
 }
 
+.compatiblity-alert-ios
+{
+  display: none;
+}
+
+@supports (-webkit-overflow-scrolling: touch) /*If iOS or iPadOS, display compatiblity alert.*/
+{
+  .compatiblity-alert-ios
+  {
+    display: block;
+  }
+}
+
 /* show controls on mobile only*/
 
 @media not screen and (min-width: 1024px)
