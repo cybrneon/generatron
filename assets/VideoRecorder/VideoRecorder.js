@@ -9,6 +9,7 @@
 
 // CYBRNEON
 // 2022-05-18  Added stuff to style the REC Button
+// 2022-05-31  Tweaked some stuff
 
 class VideoRecorder {
   static record() {
@@ -84,9 +85,10 @@ class VideoRecorder {
       "_" +
       ("0" + second()).slice(-2);
     this.lnkDownload = document.createElement("a");
+    this.btn.id = 'download-vid-button'
     this.lnkDownload.innerHTML = "Download Video<br>";
     this.lnkDownload.href = url;
-    this.lnkDownload.download = "video_" + date + ".webm";
+    this.lnkDownload.download = "GENERATRON_vid_" + date + ".webm";
 
     if (this.btn) {
       this.btn.parentNode.insertBefore(this.lnkDownload, this.btn.nextSibling);
