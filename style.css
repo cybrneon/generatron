@@ -166,21 +166,23 @@ button:active
 .compatiblity-alert-ios
 {
   display: none;
+  height: 70px;
+  background-color: red;
 }
+
+.compatiblity-alert-ios p
+{
+  color: white;
+}
+
 
 @supports (-webkit-overflow-scrolling: touch) /*If iOS or iPadOS, display compatiblity alert.*/
 {
   .compatiblity-alert-ios
   {
-    height: 70px;
-    background-color: red;
+    display: block;
   }
   
-  .compatiblity-alert-ios p
-  {
-    color: white;
-  }
-
   .introductory-text /* The initiator text */
   {
     display: none;
