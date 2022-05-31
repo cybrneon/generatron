@@ -40,7 +40,7 @@ class VideoRecorder {
       this.recorder.stop();
       this.recorder = null;
       if (this.btn) {
-        this.btn.textContent = "Record Video";
+        this.btn.textContent = "Record Video (Beta)";
         this.btn.onclick = () => this.record();
       }
     }
@@ -49,7 +49,7 @@ class VideoRecorder {
   static addButton() {
     this.btn = document.createElement("button");
     this.btn.id = 'rec-button'
-    this.btn.innerHTML = "Record Video";
+    this.btn.innerHTML = "Record Video (Beta)";
     //this.btn.style.margin = "10px"; --- not needed
     this.btn.onclick = () => this.record();
     document.body.append(this.btn);
