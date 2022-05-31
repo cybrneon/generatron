@@ -13,7 +13,7 @@ let angle = 0;
 let fr = 60;
 //let contents = ""; -- Typing Text feature removed for the moment
 
-let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp;
+let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp; let pads;
 
 
 function preload()
@@ -40,6 +40,9 @@ function preload()
 
   //-ARP-//////////////////////////////////////////////
   arp = loadSound('assets/fx/cybrcity/arp.wav');
+
+  //-PADS-//////////////////////////////////////////////
+  pads = loadSound('assets/fx/cybrcity/pads.wav');
 }
 
 function setup()
@@ -181,7 +184,7 @@ function keyTyped()
   }
   
   //BASS
-  if (key == 'b') //plays synth
+  if (key == 'b') //plays bass
   {    
     if (bass.isPlaying())
     {
@@ -196,7 +199,7 @@ function keyTyped()
   }
   
   //PLUCKS
-  if (key == 'd') //plays synth
+  if (key == 'd') //plays plucks
   {    
     if (plucks.isPlaying())
     {
@@ -211,7 +214,7 @@ function keyTyped()
   }
 
     //ARP
-    if (key == 'a') //plays synth
+    if (key == 'a') //plays arp
     {    
       if (arp.isPlaying())
       {
@@ -224,6 +227,21 @@ function keyTyped()
         arp.amp(0.8); //volume
       }
     }
+
+    //PADS
+    if (key == 'w') //plays pads
+    {    
+      if (arp.isPlaying())
+      {
+        //.isPlaying() returns a boolean
+        arp.stop();
+      }
+      else 
+      {
+        arp.loop();
+        arp.amp(0.6); //volume
+      }
+    }
   
   //save artwork with the P key.
   if (key == 'p')
@@ -233,7 +251,7 @@ function keyTyped()
   
   if (keyCode == 'BACKSPACE')
   {
-    clear();
+    canvas.clear();
   }
   
   //type anything -- removed for the moment
