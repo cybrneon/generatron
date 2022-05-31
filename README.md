@@ -5,6 +5,8 @@ AUDIOGENIC VISUAL GENERATOR
 
 ## Introduction
 Lorem Ipsum
+Website: https://generatron.cybrneon.xyz
+Documentation: https://cybrneon.gitbook.io/generatron/
 
 
 Readme is not yet ready!
