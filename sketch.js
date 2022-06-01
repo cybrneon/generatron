@@ -231,15 +231,15 @@ function keyTyped()
     //PADS
     if (key == 'w') //plays pads
     {    
-      if (arp.isPlaying())
+      if (pads.isPlaying())
       {
         //.isPlaying() returns a boolean
-        arp.stop();
+        pads.stop();
       }
       else 
       {
-        arp.loop();
-        arp.amp(0.6); //volume
+        pads.loop();
+        pads.amp(0.4); //volume
       }
     }
   
