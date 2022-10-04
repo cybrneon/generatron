@@ -69,7 +69,7 @@ function setup()
   
   //textFont('Space Grotesk');
   //textAlign(LEFT);
-  pixelDensity(4); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
+  pixelDensity(1); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
   //Hack it up from 4 if you want crisp images for print for exemple
   //set to 1 because the video recorder can't follow and lags...
 
