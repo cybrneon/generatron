@@ -1,11 +1,2 @@
-# GENERATRON
-AUDIOGENIC VISUAL GENERATOR
-
-![alt text](/assets/img/screenshots/generatron_screenshot_01.png)
-
-## Introduction
-Website: https://generatron.cybrneon.xyz
-Documentation: https://cybrneon.gitbook.io/generatron/
-
-
-Readme is not yet ready!
+# GENERATRON 2.0 - CODE NAME WHISTLER
+Under Construction

@@ -13,70 +13,64 @@
 -->
 
 <!DOCTYPE html><html lang="en"><head>
-    <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="normalize.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GENERATRON</title>
-    <link rel="icon" type="image/PNG" href="assets/img/logos/generatron_favicon.png"/>
-    <!-- Name + SEO terms -->
+  <script src="p5.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="normalize.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GENERATRON</title>
+  <link rel="icon" type="image/PNG" href="assets/img/logos/generatron_favicon.png"/>
+  <!-- Name + SEO terms -->
     
-    <!--PLUGINS-->
-    <script src="/assets/VideoRecorder/VideoRecorder.js"></script> <!-- VIDEO RECORDER by Prossel-->
+  <!--PLUGINS-->
+  <script src="/assets/VideoRecorder/VideoRecorder.js"></script> <!-- VIDEO RECORDER by Prossel-->
     
-    <!--TYPEFACES (import Space Grotesk from Google Fonts --- REGULAR & BOLD)-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
+  <!--TYPEFACES (import Space Grotesk from Google Fonts --- REGULAR & BOLD)-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
 
   </head>
+
+  <header class="header">
+    <div class="menu">
+      <div class="generatron-logo">
+        <img src="/assets/img/logos/whistler.png" alt="GENERATRON 2.0 - WHISTLER">
+      </div>
+    </div>
+    <div class="generatron-version-top-label">
+      <p>VERSION 2.0 - WHISTLER</p>
+    </div>
+
+  </header>
   <body>
     <main>
-      <div class="header">
-        <div class="flex-divider-top">
-          <div class="logo">
-            <img src="/assets/img/logos/generatron.svg" alt="GENERATRON: Visuals Generator with themed-music."></img>
-            <!--<h1>GENERATRON</h1>-->
-            <h4 class="soft-version">Version 0.3.4_2 (04.07.22 - Red Platinum) <br> Current Pixel Density: 4</h4>
-            <div class="top-links">
-              <a href="/pages/gallery.html" target="_blank"> GALLERY </a>
-              <a href="https://cybrneon.github.io/generatronproject/" target="_blank"> ABOUT </a>
-              <a href="https://instagram.com/generatron_" target="_blank"> INSTAGRAM </a>
-              <a href="https://github.com/cybrneon/generatron" target="_blank"> GITHUB </a>
-            </div>
-          </div>
-          <div class="controls">
-            <h4>MOUSE</h4>
-            <p>Left Click: Drums with Rainbow <br> Middle Click: Drums with Sky <br> Right Click: Drums with Electric Blue</p>
-            <h4>KEYBOARD</h4>
-            <p>W: Pads <br> A: Arp <br> S: Synth <br> D: Plucks <br> B: Bass <br> P: Save Artwork (Transparent PNG) </p>
-          </div>
-        </div>
-      </div>
-      
       <script src="sketch.js" class="generatron-p5sketch"></script>
       <div class="sketch-overlay">
         <div class="introductory-text" id="introductory-text-id">
-          <p>Press a key or move your mouse to start.</p>
+          <p>PRESS A KEY OR MOVE YOUR MOUSE TO START</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="keys">
+          <button>W</button>
+          <button>A</button>
+          <button>S</button>
+          <button>D</button>
+          <button>B</button>
         </div>
       </div>
     </main>
 
     <div class="footer">
       <div class="footer-content">
-        <!-- NOT SHOWING CONTROLS ATM
-        <div class="mobile-control"><button>S</button></div>
-        <div class="mobile-control"><button>D</button></div>
-        <div class="mobile-control"><button>B</button></div>
-        -->
         <div class="compatiblity-alert-ios">
-          <p>iOS and iPadOS are currently not supported. <br> Please use desktop instead.</p>
+          <p>IOS AND IPADOS ARE CURRENTLY NOT SUPPORTED <br> PLEASE USE DESKTOP INSTEAD</p>
         </div>
       </div>
     </div>
-  
-
-</body></html>
+  </body>
+</html>

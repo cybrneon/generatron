@@ -11,34 +11,14 @@ html, body
   padding: 0;
   background-color: black;
   font-family: 'Space Grotesk', sans-serif;
-  /*remove annoying horizontal scroll*/
   max-width: 100%;
   overflow-x: hidden;
+  display: flex;
 }
 
-canvas
+canvas /* sets the p5.js canvas to BLOCK*/
 {
   display: block;
-}
-
-.logo img
-{
-  padding: auto;
-  display: block;
-  padding-left: 2rem;
-  padding-top: 1rem;
-  height: 3rem;
-}
-
-.top-links
-{
-  padding-left: 2rem;
-}
-
-.top-links a
-{
-  display: inline-block;
-  margin-right: 0.5rem;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -46,18 +26,6 @@ h1, h2, h3, h4, h5, h6
   color:white;
   text-align: left;
   padding-left: 2rem;
-}
-
-.controls p
-{
-  color:white;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  margin-top: 0px;
-}
-.controls h4
-{
-  margin-bottom: 4px;
 }
 
 p
@@ -81,23 +49,13 @@ a:active
   color: #003380;
 }
 
-.soft-version
-{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  opacity:0.6;
-  text-transform: uppercase;
-}
-
-
-
 button /*, rec-button -- this one too*/
 {
   padding: 12px 26px;
   color: #fff;
   border: 0;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 12px;
   transition: all 150ms ease-in-out;
   
   border-radius: 12px;
@@ -122,12 +80,48 @@ button:active
   text-align: center;
 }
 
+generatron-p5sketch
+{
+  position: absolute;
+  top: 76px;
+  bottom: 0;
+}
+
+.menu
+{
+
+}
+
+.generatron-logo
+{
+  padding: 20px;
+}
+
+.generatron-logo img
+{
+  height: 36px;
+}
+
+.generatron-version-top-label
+{
+  padding: 20px;
+  padding-right: 30px;
+}
+
 
 /* ---- STRUCTURE ---- */
 .header
 {
   position:fixed;
   width: 100%;
+  height: 76px;
+  background-color: aliceblue;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .flex-divider-top /* used in div class"top" */

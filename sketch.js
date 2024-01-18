@@ -82,6 +82,11 @@ function setup()
   button = createButton("B");*/
 }
 
+function windowResized()
+{
+  resizeCanvas(windowWidth, windowHeight-76);
+}
+
 function draw()
 {
   //textSize(32);
