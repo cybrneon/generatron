@@ -13,7 +13,8 @@ html, body
   font-family: 'Space Grotesk', sans-serif;
   max-width: 100%;
   overflow-x: hidden;
-  display: flex;
+  overflow-y: hidden;
+  /*display: flex;*/
 }
 
 canvas /* sets the p5.js canvas to BLOCK*/
@@ -31,6 +32,7 @@ h1, h2, h3, h4, h5, h6
 p
 {
   color:white;
+  font-size: 14px;
 }
 
 a
@@ -47,6 +49,12 @@ a:hover
 a:active
 {
   color: #003380;
+}
+
+ul, li
+{
+  margin: 0;
+  padding: 0;
 }
 
 button /*, rec-button -- this one too*/
@@ -87,11 +95,6 @@ generatron-p5sketch
   bottom: 0;
 }
 
-.menu
-{
-
-}
-
 .generatron-logo
 {
   padding: 20px;
@@ -108,6 +111,120 @@ generatron-p5sketch
   padding-right: 30px;
 }
 
+.menu
+{
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  background-color: #000000;
+  transform: translateX(-1000px);
+  transition: 0.5s;
+  overflow: scroll;
+  z-index: 999;
+}
+
+.show-menu
+{
+  transform: translateX(0);
+}
+
+.menu li
+{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu li a
+{
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-main-items li a
+{
+  color: #ffffff;
+}
+
+.menu-main-items li
+{
+  height: 100px;
+  font-size: 60px;
+  padding: 20px;
+}
+
+.menu-secondary-items li
+{
+  height: 50px;
+  font-size: 30px;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+/* MENU ITEMS COLORS*/
+.menu-item-1
+{
+  background-color: #DF585D;
+}
+
+.menu-item-2
+{
+  background-color: #EE754B;
+}
+
+.menu-item-3
+{
+  background-color: #EEE20F;
+}
+
+.menu-item-4
+{
+  background-color: #67D30F;
+}
+
+.menu-item-5
+{
+  background-color: #67A6E1;
+}
+
+.menu-item-small-1
+{
+  background-color: #ffffff;
+}
+
+.menu-item-small-2
+{
+  background-color: #000000;
+}
+
+.menu-item-small-1 a
+{
+  color: #000000;
+}
+
+.menu-item-small-2 a
+{
+  color: #ffffff;
+}
+
+.menu-info
+{
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  height: 100px;
+  padding: 20px;
+  opacity: 35%;
+}
+
 
 /* ---- STRUCTURE ---- */
 .header
@@ -115,7 +232,7 @@ generatron-p5sketch
   position:fixed;
   width: 100%;
   height: 76px;
-  background-color: aliceblue;
+  background-color: #000000;
 
   display: flex;
   flex-direction: row;
@@ -192,6 +309,11 @@ generatron-p5sketch
   {
     display:flex;
   }
+}
+
+.sketch-overlay
+{
+  z-index: 0;
 }
 
 .introductory-text /* The initiator text */

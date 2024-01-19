@@ -9,6 +9,7 @@
 
 // WHISTLER 2024
 // A complete overhaul of the original Generatron, with a new design, new sounds, new features, and a new visual identity.
+// @CYBRNEON & THE GENERATRON COMMUNITY
 
 -->
 
@@ -34,19 +35,35 @@
 
   </head>
 
-  <header class="header">
-    <div class="menu">
-      <div class="generatron-logo">
-        <img src="/assets/img/logos/whistler.png" alt="GENERATRON 2.0 - WHISTLER">
-      </div>
+  <header class="header"> <!-- HEADER -->
+    <div class="generatron-logo">
+      <img src="/assets/img/logos/whistler.png" alt="GENERATRON 2.0 - WHISTLER">
     </div>
     <div class="generatron-version-top-label">
       <p>VERSION 2.0 - WHISTLER</p>
     </div>
-
   </header>
   <body>
-    <main>
+    <div class="menu"> <!-- MENU -->
+      <ul class="menu-main-items">
+        <li class="menu-item-1"><a href="">SYNTHWAVE</a></li>
+        <li class="menu-item-2"><a href="">RETROWAVE</a></li>
+        <li class="menu-item-3"><a href="">FUTURE FUNK</a></li>
+        <li class="menu-item-4"><a href="">HOUSE</a></li>
+        <li class="menu-item-5"><a href="">UNKNOWN</a></li>
+      </ul>
+      <ul class="menu-secondary-items">
+        <li class="menu-item-small-1"><a href="">GALLERY</a></li>
+        <li class="menu-item-small-2"><a href="">GITHUB</a></li>
+        <li class="menu-item-small-1"><a href="">ABOUT</a></li>
+      </ul>
+      <div class="menu-info">
+        <p>GENERATRON <br> VERSION 2.0 - WHISTLER</p>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+    
+    <main> <!-- MAIN EXPERIENCE -->
       <script src="sketch.js" class="generatron-p5sketch"></script>
       <div class="sketch-overlay">
         <div class="introductory-text" id="introductory-text-id">
@@ -54,7 +71,7 @@
         </div>
       </div>
 
-      <div class="controls">
+      <div class="controls"> <!-- CONTROLS -->
         <div class="keys">
           <button>W</button>
           <button>A</button>
@@ -65,7 +82,7 @@
       </div>
     </main>
 
-    <div class="footer">
+    <div class="footer"> <!-- FOOTER -->
       <div class="footer-content">
         <div class="compatiblity-alert-ios">
           <p>IOS AND IPADOS ARE CURRENTLY NOT SUPPORTED <br> PLEASE USE DESKTOP INSTEAD</p>
