@@ -54,9 +54,7 @@ function setup()
   //background(0); already set in style.css
   
   frameRate(fr); //Attempt to refresh at starting FPS
-
-  VideoRecorder.addButton();
-  
+    
   //disable browser right context menu
   document.oncontextmenu = function() 
   {

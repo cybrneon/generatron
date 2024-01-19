@@ -2,6 +2,22 @@
 :root
 {
   color-scheme: dark; /*puts everything (even scrollbar) into dark mode*/
+  --AccentColor: #0066ff;
+
+  /* FONT FALLBACK*/
+  --font-fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-sans;
+}
+
+@font-face
+{
+    font-family: "Gangster";
+    src: url(/assets/fonts/GangsterGrotesk-Regular.woff2) format("woff2");
+    font-weight: 400;
+/*
+         url(/assets/fonts/GangsterGrotesk-Light.woff2) format("woff2"),
+         url(/assets/fonts/GangsterGrotesk-Bold.woff2) format("woff2");
+*/
 }
 
 
@@ -10,7 +26,7 @@ html, body
   margin: 0;
   padding: 0;
   background-color: black;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Gangster', sans-serif;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -59,12 +75,15 @@ ul, li
 
 button /*, rec-button -- this one too*/
 {
-  padding: 12px 26px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
   color: #fff;
   border: 0;
   font-weight: normal;
   font-size: 12px;
   transition: all 150ms ease-in-out;
+  text-align: center;
   
   border-radius: 12px;
   box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px 0 inset, 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
@@ -79,13 +98,6 @@ button:hover
 button:active
 {
   transform: scale(.95);
-}
-
-#rec-button
-{
-  position:absolute;
-  z-index: -999;
-  text-align: center;
 }
 
 generatron-p5sketch
@@ -267,14 +279,6 @@ generatron-p5sketch
   align-items: center;
 }
 
-.mobile-control button
-{
-  width: 100px;
-  min-width: 50px;
-  display: none;
-  margin-left: 20px;
-}
-
 .compatiblity-alert-ios
 {
   display: none;
@@ -285,6 +289,50 @@ generatron-p5sketch
 .compatiblity-alert-ios p
 {
   color: white;
+}
+
+.controls
+{
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  opacity: 0.2;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.controls:hover
+{
+  opacity: 1;
+}
+
+.controls:not(:hover)
+{
+  transition-delay: 2s;
+}
+
+.keys
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.key
+{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.key-button
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
 }
 
 
@@ -303,13 +351,14 @@ generatron-p5sketch
 
 /* show controls on mobile only*/
 
-@media not screen and (min-width: 1024px)
+/*@media not screen and (min-width: 1024px)
 {
   .mobile-control button
   {
     display:flex;
   }
 }
+*/
 
 .sketch-overlay
 {
