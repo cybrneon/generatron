@@ -110,6 +110,17 @@ generatron-p5sketch
 .generatron-logo
 {
   padding: 20px;
+  transition: 0.2s ease-in-out;
+}
+
+.generatron-logo:hover
+{
+  scale: 1.05;
+}
+
+.generatron-logo:active
+{
+  scale: 0.9;
 }
 
 .generatron-logo img
@@ -226,14 +237,20 @@ generatron-p5sketch
 .menu-info
 {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  height: 100px;
+  height: 150px;
   padding: 20px;
+}
+
+.menu-info p
+{
   opacity: 35%;
 }
 
@@ -333,6 +350,35 @@ generatron-p5sketch
   align-items: center;
   justify-content: center;
   width: 48px;
+}
+
+.capture
+{
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0.2;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.capture:hover
+{
+  opacity: 1;
+}
+
+.capture:not(:hover)
+{
+  transition-delay: 2s;
+}
+
+.capture-keys
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 
