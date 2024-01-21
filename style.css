@@ -1,4 +1,4 @@
-/* ---- DESIGN ---- */
+/* ------------------------------- DESIGN ------------------------------- */
 :root
 {
   color-scheme: dark; /*puts everything (even scrollbar) into dark mode*/
@@ -21,16 +21,37 @@
 }
 
 
-html, body
+html
 {
   margin: 0;
   padding: 0;
   background-color: black;
   font-family: 'Gangster', sans-serif;
   max-width: 100%;
+}
+
+.body-experience /*BODY FOR EXPERIENCE ONLY*/
+{
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
-  /*display: flex;*/
+}
+
+/* BODY FOR STATIC WEBPAGES ONLY (UNSUED)
+.body-web 
+{
+  padding: 32px;
+  padding: 0;
+  max-width: 100%;
+}
+*/
+
+body
+{
+  background-color: black;
+  font-family: 'Gangster', sans-serif;
 }
 
 canvas /* sets the p5.js canvas to BLOCK*/
@@ -134,6 +155,7 @@ generatron-p5sketch
 {
   padding: 20px;
   padding-right: 30px;
+  opacity: 15%;
 }
 
 .menu
@@ -145,7 +167,7 @@ generatron-p5sketch
   transform: translateX(-1000px);
   transition: 0.5s;
   overflow: scroll;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .show-menu
@@ -255,7 +277,7 @@ generatron-p5sketch
   overflow: hidden;
   text-overflow: ellipsis;
 
-  height: 150px;
+  height: 170px;
   padding: 20px;
 }
 
@@ -270,6 +292,38 @@ generatron-p5sketch
 }
 
 .menu-info a:hover
+{
+  opacity: 100%;
+}
+
+.menu-info-socials
+{
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.menu-info-socials a
+{
+  color: #ffffff;
+  font-size: 24px;
+  opacity: 65%;
+}
+
+.fa-brands
+{
+  transition: all 150ms ease-in-out;
+}
+
+.fa-brands:hover
+{
+  opacity: 85%;
+}
+
+.fa-brands:active
 {
   opacity: 100%;
 }
@@ -295,13 +349,18 @@ generatron-p5sketch
 }
 
 
-/* ---- STRUCTURE ---- */
+/* ------------------------------- STRUCTURE ------------------------------- */
 .header
 {
   position:fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 76px;
-  background-color: #000000;
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  -webkit-backdrop-filter: blur(30px); /* blur effect */
+  backdrop-filter: blur(30px); /* standard property, for non-webkit browsers */
+  z-index: 999;
 
   display: flex;
   flex-direction: row;
@@ -484,4 +543,65 @@ generatron-p5sketch
   0%   {opacity: 1;}
   90%  {opacity: 1;}
   100% {opacity: 0;}
+}
+
+
+
+/* ------------------------------- ABOUT PAGE ------------------------------- */
+
+/* Adding padding to other parts of the website with main-web*/
+.main-web
+{
+  padding: 32px;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-about
+{
+  margin-top: 70px;
+  height: 50vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 32px;
+
+  background-color: #EE754B;
+  border-radius: 10px;
+}
+
+.hero
+{
+  margin-top: 70px;
+  height: 50vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 32px;
+
+  background-color: #272729;
+  border-radius: 10px;
+}
+
+.hero-title
+{
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+}
+
+.hero-subtitle
+{
+  margin: 0;
+  padding: 0;
+  max-width: 58%;
+  font-size: 30px;
 }

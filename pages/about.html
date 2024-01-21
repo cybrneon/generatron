@@ -1,36 +1,74 @@
+<!--
+
+//  _____ ______ _   _ ______ _____         _______ _____   ____  _   _ 
+//  / ____|  ____| \ | |  ____|  __ \     /\|__   __|  __ \ / __ \| \ | |
+//  | |  __| |__  |  \| | |__  | |__) |   /  \  | |  | |__) | |  | |  \| |
+//  | | |_ |  __| | . ` |  __| |  _  /   / /\ \ | |  |  _  /| |  | | . ` |
+//  | |__| | |____| |\  | |____| | \ \  / ____ \| |  | | \ \| |__| | |\  |
+//  \_____|______|_| \_|______|_|  \_\/_/    \_\_|  |_|  \_\\____/|_| \_|
+
+// WHISTLER 2024
+// A complete overhaul of the original Generatron, with a new design, new sounds, new features, and a new visual identity.
+// @CYBRNEON & THE GENERATRON COMMUNITY
+
+// --------- ABOUT ---------
+
+-->
+
 <!DOCTYPE html><html lang="en"><head>
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" href="normalize.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT GENERATRON</title>
-    <!-- Name + SEO terms -->
-    
-    <!--PLUGINS-->
-
-    <!--TYPEFACES (import Space Grotesk from Google Fonts --- REGULAR & BOLD)-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="stylesheet" href="/normalize.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABOUT GENERATRON</title>
+  <meta name="description" content="Welcome to the immersive audio-visual experience of GENERATRON. GENERATRON 2.0 offers a unique blend of new design, sounds, and features, along with a fresh visual identity.">
+  <link rel="icon" type="image/PNG" href="/assets/img/logos/generatron_favicon.png"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"  type='text/css'>
+  <!-- Name + SEO terms -->
+  <meta name=”keywords” content=”audio-visual, immersive, experience, GENERATRON, 2.0, design, interactive, sounds, audiogenic, rythmic, retro, CYBRNEON”/>
   </head>
-  <body>
-    <main>
-      <h1>About (not yet ready!)</h1>
-      <div class="what-is-geometry">
-        <h3>WHAT IS A GEOMETRY?</h3>
-          <p>In our world, most objects are three-dimensional. A point, a line, a plane, a sphere, and so on. But what about higher-dimensional objects? In our world, there are three dimensions of length, width, and height.
-          <br> What happens if we add a fourth dimension? Well, there’s a dimension of time. The one thing that we don’t have is a dimension of color.
-          <br> How do we know that there are only three dimensions of length, width, and height? Well, if we imagine a cube, that’s a perfect three-dimensional object.</p>
-      </div>
-      <div class="explaining-generatron">
-        <h3>GENERATRON</h3>
-        <p>CYBRNEON proudly presents GENERATRON, an open-source and free audiogenic visual generator. The GENERATRON software allows the user to generate visuals using pre-recorded sound tracks. This allows the user to create a new visuals using 3D shapes for each genre that can later be shared with friends and family or even sell as NFTs. The GENERATRON software will soon allow the user to create their own sound tracks with the user’s choice of audio and visual samples.</p>
-      </div>
-      <p> Text generated with AI </p>
-    </main>
-    <script src="sketch.js" class="generatron-p5sketch"></script>
-  
 
-</body></html>
+  <header class="header"> <!-- HEADER -->
+    <div class="generatron-logo">
+      <img src="/assets/img/logos/whistler.png" alt="GENERATRON 2.0 - WHISTLER">
+    </div>
+    <div class="generatron-version-top-label">
+      <p>VERSION 2.0 - WHISTLER</p>
+    </div>
+  </header>
+  <body> <!-- BODY for the static webpages only.-->
+    <div class="menu"> <!-- MENU -->
+      <ul class="menu-main-items">
+        <li class="menu-item-1"><a href="/index.html">SYNTHWAVE</a></li>
+        <li class="menu-item-2"><a href="/index.html">RETROWAVE</a></li>
+        <li class="menu-item-3"><a href="/index.html">FUTURE FUNK</a></li>
+        <li class="menu-item-4"><a href="/index.html">HOUSE</a></li>
+        <li class="menu-item-5"><a href="/index.html">UNKNOWN</a></li>
+      </ul>
+      <ul class="menu-secondary-items">
+        <li class="menu-item-small-1"><a href="/pages/gallery.html">GALLERY</a></li>
+        <li class="menu-item-small-2"><a href="https://github.com/cybrneon/generatron">GITHUB</a></li>
+        <li class="menu-item-small-1"><a href="/pages/about.html">ABOUT</a></li>
+        <li class="menu-item-small-2"><a href="">PIXEL DENSITY</a><div id="sliderContainer"></div></li>
+      </ul>
+      <div class="menu-info">
+        <img src="/assets/img/logos/generatron.svg" alt="GENERATRON">
+        <p>GENERATRON <br> VERSION 2.0 - WHISTLER</p>
+        <div class="menu-info-socials">
+          <i class="fa-brands fa-tiktok"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <a href="/pages/privacy.html">PRIVACY POLICY</a>
+      </div>
+    </div>
+    <script src="/scripts/script.js"></script>
+    
+    <main class="main-web">
+      <div class="hero-about">
+        <h1 class="hero-title">GENERATRON 2.0</h1>
+        <h3 class="hero-subtitle">Welcome to the immersive audio-visual experience of GENERATRON. GENERATRON 2.0 offers a unique blend of new design, sounds, and features, along with a fresh visual identity.</h3>
+      </div>
+    </main>
+  </body>
+</html>
