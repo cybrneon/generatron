@@ -1,3 +1,6 @@
+/* ------------------------------- Menu Script ------------------------------- */
+/* ------------------------------- GENERATRON -------------------------------- */
+
 var logo = document.querySelector('.generatron-logo');
 var menu = document.querySelector('.menu');
 

@@ -34,7 +34,7 @@
       <img src="/assets/img/logos/whistler.png" alt="GENERATRON 2.0 - WHISTLER">
     </div>
     <div class="generatron-version-top-label">
-      <p>VERSION 2.0 - WHISTLER</p>
+      <p id="version">VERSION</p>
     </div>
   </header>
   <body class="body-experience"> <!-- BODY for the experience only.-->
@@ -62,10 +62,8 @@
         <a href="/pages/privacy.html">PRIVACY POLICY</a>
       </div>
     </div>
-    <script src="/scripts/script.js"></script>
     
     <main> <!-- MAIN EXPERIENCE -->
-      <script src="/sketch.js" class="generatron-p5sketch"></script>
       <div class="sketch-overlay">
         <div class="introductory-text" id="introductory-text-id">
           <p>PRESS A KEY OR MOVE YOUR MOUSE TO START</p>
@@ -117,4 +115,7 @@
       </div>
     </div>
   </body>
+  <script src="/sketch.js" class="generatron-p5sketch"></script> <!-- Always at the end of the HTML so that everything loads before the sketch-->
+  <script src="/scripts/script.js"></script>
+  <script src="/scripts/version.js"></script>
 </html>
