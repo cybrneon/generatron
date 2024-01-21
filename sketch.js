@@ -17,7 +17,38 @@ let fr = 60;
 let pixelDensitySlider;
 //let contents = ""; -- Typing Text feature removed for the moment
 
-let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp; let pads;
+//let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp; let pads;
+
+class Theme {
+  constructor(name) {
+    this.name = name;
+    this.drums1 = null;
+    this.drums2 = null;
+    this.drums3 = null;
+    this.synth = null;
+    this.bass = null;
+    this.plucks = null;
+    this.arp = null;
+    this.pads = null;
+  }
+
+  loadSounds() {
+    this.drums1 = loadSound(`assets/themes/${this.name}/drums1.wav`);
+    this.drums2 = loadSound(`assets/themes/${this.name}/drums2.wav`);
+    this.drums3 = loadSound(`assets/themes/${this.name}/drums3.wav`);
+    this.synth = loadSound(`assets/themes/${this.name}/lead.wav`);
+    this.bass = loadSound(`assets/themes/${this.name}/bass.wav`);
+    this.plucks = loadSound(`assets/themes/${this.name}/synth.wav`);
+    this.arp = loadSound(`assets/themes/${this.name}/arp.wav`);
+    this.pads = loadSound(`assets/themes/${this.name}/pads.wav`);
+  }
+}
+
+let synthwave;
+let retrowave;
+let futurefunk;
+let house;
+let currentTheme;
 
 
 function preload()
@@ -29,26 +60,18 @@ function preload()
 
   //TEXTURES
   cubeTexture = loadImage('assets/textures/sky.png');
-  
-  //-DRUMS-//////////////////////////////////////////////
-  drums1 = loadSound('assets/themes/synthwave/drums1.wav');
-  drums2 = loadSound('assets/themes/synthwave/drums1.wav');
-  drums3 = loadSound('assets/themes/synthwave/drums1.wav');
 
-  //-LEAD SYNTH-//////////////////////////////////////////////
-  synth = loadSound('assets/themes/synthwave/lead.wav');
+  synthwave = new Theme('synthwave');
+  synthwave.loadSounds();
 
-  //-BASS-//////////////////////////////////////////////
-  bass = loadSound('assets/themes/synthwave/bass.wav');
+  retrowave = new Theme('retrowave');
+  retrowave.loadSounds();
 
-  //-PLUCKS-//////////////////////////////////////////////
-  plucks = loadSound('assets/themes/synthwave/synth.wav');
+  //retrowave = new Theme('futurefunk');
+  //retrowave.loadSounds();
 
-  //-ARP-//////////////////////////////////////////////
-  arp = loadSound('assets/themes/synthwave/arp.wav');
-
-  //-PADS-//////////////////////////////////////////////
-  pads = loadSound('assets/themes/synthwave/pads.wav');
+  //retrowave = new Theme('house');
+  //retrowave.loadSounds();
 }
 
 function setup()
@@ -63,12 +86,14 @@ function setup()
   {
     return false;
   }
+
+  currentTheme = synthwave; // start with synthwave genre
   
   //REVERB
   // reverbTime of 3 seconds, decayRate of 0.2%
   reverb = new p5.Reverb();
-  reverb.process(drums1, 3, 0.2);
-  reverb.process(bass, 3, 0.2);
+  reverb.process(currentTheme.drums1, 3, 0.2);
+  reverb.process(currentTheme.bass, 3, 0.2);
   //reverb.amp(4); // turn it up!
 
   // Create a slider from 1 to 4 with a step of 1 for Canva's Pixel Density
@@ -158,17 +183,17 @@ function mousePressed()
 {
   if (mouseButton === LEFT)  
   {
-    drums1.loop();
+    currentTheme.drums1.loop();
   }
 
   if (mouseButton === CENTER)  
   {
-    drums2.loop();
+    currentTheme.drums2.loop();
   }
 
   if (mouseButton === RIGHT)  
   {
-    drums3.loop();
+    currentTheme.drums3.loop();
   }
 }
 
@@ -176,17 +201,17 @@ function mouseReleased()
 {
   if (mouseButton === LEFT)  
   {  
-    drums1.stop();
+    currentTheme.drums1.stop();
   }
 
   if (mouseButton === CENTER)  
   {
-    drums2.stop();
+    currentTheme.drums2.stop();
   }
 
   if (mouseButton === RIGHT)  
   {
-    drums3.stop();
+    currentTheme.drums3.stop();
   }
 }
 
@@ -195,77 +220,77 @@ function keyTyped()
   //SYNTH
   if (key == 's') //plays synth
   {
-    console.log(drums1.isPlaying()+0);
+    console.log(currentTheme.drums1.isPlaying()+0);
     
-    if (synth.isPlaying())
+    if (currentTheme.synth.isPlaying())
     {
       //.isPlaying() returns a boolean
-      synth.stop();
+      currentTheme.synth.stop();
     }
     else 
     {
-      synth.loop();
-      synth.amp(0.8); //volume
+      currentTheme.synth.loop();
+      currentTheme.synth.amp(0.8); //volume
     }
   }
   
   //BASS
   if (key == 'b') //plays bass
   {    
-    if (bass.isPlaying())
+    if (currentTheme.bass.isPlaying())
     {
       //.isPlaying() returns a boolean
-      bass.stop();
+      currentTheme.bass.stop();
     }
     else 
     {
-      bass.loop();
-      bass.amp(0.8); //volume
+      currentTheme.bass.loop();
+      currentTheme.bass.amp(0.8); //volume
     }
   }
   
   //PLUCKS
   if (key == 'd') //plays plucks
   {    
-    if (plucks.isPlaying())
+    if (currentTheme.plucks.isPlaying())
     {
       //.isPlaying() returns a boolean
-      plucks.stop();
+      currentTheme.plucks.stop();
     }
     else 
     {
-      plucks.loop();
-      plucks.amp(0.6); //volume
+      currentTheme.plucks.loop();
+      currentTheme.plucks.amp(0.6); //volume
     }
   }
 
     //ARP
     if (key == 'a') //plays arp
     {    
-      if (arp.isPlaying())
+      if (currentTheme.arp.isPlaying())
       {
         //.isPlaying() returns a boolean
-        arp.stop();
+        currentTheme.arp.stop();
       }
       else 
       {
-        arp.loop();
-        arp.amp(0.8); //volume
+        currentTheme.arp.loop();
+        currentTheme.arp.amp(0.8); //volume
       }
     }
 
     //PADS
     if (key == 'w') //plays pads
     {    
-      if (pads.isPlaying())
+      if (currentTheme.pads.isPlaying())
       {
         //.isPlaying() returns a boolean
-        pads.stop();
+        currentTheme.pads.stop();
       }
       else 
       {
-        pads.loop();
-        pads.amp(0.4); //volume
+        currentTheme.pads.loop();
+        currentTheme.pads.amp(0.4); //volume
       }
     }
   
@@ -304,4 +329,29 @@ function updatePixelDensity()
 function CaptureScreenshot()
 {
   save("GENERATRON_design.png");
+}
+
+function changeTheme(themeName)
+{
+  clear(); // clear the canvas before switching theme
+
+  switch(themeName) {
+    case 'synthwave':
+      currentTheme = synthwave;
+      break;
+    case 'retrowave':
+      currentTheme = retrowave;
+      break;
+    case 'futurefunk':
+      currentTheme = futurefunk;
+      break;
+    case 'house':
+      currentTheme = house;
+      break;
+    case 'unknown':
+      // handle the unknown theme
+      break;
+    default:
+      console.log('Unknown theme: ' + themeName);
+  }
 }
