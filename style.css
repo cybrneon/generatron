@@ -55,6 +55,7 @@ a
 {
   color: white;
   margin-top: 0;
+  font-size: 14px;
 }
 
 a:hover
@@ -64,7 +65,7 @@ a:hover
 
 a:active
 {
-  color: #003380;
+  color: #0057d9;
 }
 
 ul, li
@@ -103,29 +104,30 @@ button:active
 generatron-p5sketch
 {
   position: absolute;
-  top: 76px;
   bottom: 0;
 }
 
 .generatron-logo
 {
   padding: 20px;
-  transition: 0.2s ease-in-out;
-}
-
-.generatron-logo:hover
-{
-  scale: 1.05;
-}
-
-.generatron-logo:active
-{
-  scale: 0.9;
+  position: relative;
 }
 
 .generatron-logo img
 {
   height: 36px;
+  transition: 0.2s ease-in-out;
+}
+
+.generatron-logo img:hover
+{
+  transform: translateX(15px);
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 0px, rgba(240, 46, 170, 0.3) -10px 0px, rgba(240, 46, 170, 0.2) -15px 0px, rgba(240, 46, 170, 0.1) -20px 0px, rgba(240, 46, 170, 0.05) -25px 0px;
+}
+
+.generatron-logo img:active
+{
+  box-shadow: none;
 }
 
 .generatron-version-top-label
@@ -156,16 +158,19 @@ generatron-p5sketch
   list-style-type: none;
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
 .menu li a
 {
-  display: block;
+  display: flex;
   text-decoration: none;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex-direction: row;
+  align-items: center;
 }
 
 .menu-main-items li a
@@ -173,19 +178,24 @@ generatron-p5sketch
   color: #ffffff;
 }
 
-.menu-main-items li
+.menu-main-items li a
 {
   height: 100px;
   font-size: 60px;
   padding: 20px;
 }
 
-.menu-secondary-items li
+.menu-secondary-items li a
 {
   height: 50px;
   font-size: 30px;
   padding: 10px;
   padding-left: 20px;
+}
+
+#pixelDensitySlider
+{
+  width: 100px;
 }
 
 /* MENU ITEMS COLORS*/
@@ -252,6 +262,36 @@ generatron-p5sketch
 .menu-info p
 {
   opacity: 35%;
+}
+
+.menu-info a
+{
+  opacity: 35%;
+}
+
+.menu-info a:hover
+{
+  opacity: 100%;
+}
+
+#sliderContainer
+{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+#pixelDensitySliderLabel
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 30px;
+  width: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 3px;
 }
 
 

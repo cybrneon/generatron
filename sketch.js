@@ -14,6 +14,7 @@
 //CODE
 let angle = 0;
 let fr = 60;
+let pixelDensitySlider;
 //let contents = ""; -- Typing Text feature removed for the moment
 
 let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp; let pads;
@@ -67,12 +68,29 @@ function setup()
   reverb.process(drums1, 3, 0.2);
   reverb.process(bass, 3, 0.2);
   //reverb.amp(4); // turn it up!
-  
-  //textFont('Space Grotesk');
-  //textAlign(LEFT);
-  pixelDensity(1); //downgrade to 2 if using background(0); in sketch.js instead of css. Or else the background reverts to white, even if set to black.
-  //Hack it up from 4 if you want crisp images for print for exemple
-  //set to 1 because the video recorder can't follow and lags...
+
+  // Create a slider from 1 to 4 with a step of 1 for Canva's Pixel Density
+  pixelDensitySlider = createSlider(1, 4, 1, 1);
+  pixelDensitySlider.input(updatePixelDensity);
+  pixelDensitySlider.id('pixelDensitySlider');
+  pixelDensitySlider.parent('sliderContainer');
+
+  // Create the label
+  pixelDensityLabel = createP(pixelDensitySlider.value());
+  pixelDensityLabel.id('pixelDensitySliderLabel');
+  pixelDensityLabel.parent('sliderContainer');
+
+  // Retrieve the pixel density from localStorage
+  let storedPixelDensity = localStorage.getItem('pixelDensity');
+
+  // If a pixel density was stored, set the slider and label to this value
+  if (storedPixelDensity)
+  {
+    pixelDensitySlider.value(storedPixelDensity);
+    pixelDensityLabel.html(storedPixelDensity);
+    pixelDensity(storedPixelDensity);
+  }
+
 
   /*Mobile controls buttons
   button = createButton("S");
@@ -82,7 +100,7 @@ function setup()
 
 function windowResized()
 {
-  resizeCanvas(windowWidth, windowHeight-76);
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw()
@@ -252,9 +270,9 @@ function keyTyped()
   //save artwork with the P key.
   if (key == 'p')
   {
-    save("GENERATRON_design.png");
+    CaptureScreenshot();
   }
-  
+
   if (keyCode == 'BACKSPACE')
   {
     canvas.clear();
@@ -264,7 +282,24 @@ function keyTyped()
   //contents += key;
 }
 
-function windowResized()
+// FUNCTIONS
+
+function updatePixelDensity()
 {
-  resizeCanvas(windowWidth, windowHeight);
+  let pixelDensityValue = pixelDensitySlider.value();
+  pixelDensity(pixelDensityValue);
+
+  // Update the label text
+  pixelDensityLabel.html(pixelDensityValue);
+
+  // Store the pixel density in localStorage
+  localStorage.setItem('pixelDensity', pixelDensityValue);
+  
+  // Update the label text
+  pixelDensityLabel.html(pixelDensitySlider.value());
+}
+
+function CaptureScreenshot()
+{
+  save("GENERATRON_design.png");
 }
