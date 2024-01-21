@@ -11,7 +11,7 @@
 // A complete overhaul of the original Generatron, with a new design, new sounds, new features, and a new visual identity.
 
 
-//CODE
+//CODE ---------------------------------------------
 let angle = 0;
 let fr = 60;
 let pixelDensitySlider;
@@ -22,31 +22,33 @@ let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp; le
 
 function preload()
 {
+  //SOUNDS
+  soundFormats('mp3', 'wav', 'aac'); //Default is mp3, compatible everywhere. Wav is greater quality and is seamless in loops, but doesn't work on iOS automatically.
+  
   //preload stuff
+
   //TEXTURES
   cubeTexture = loadImage('assets/textures/sky.png');
   
-  //SOUNDS
-  soundFormats('mp3', 'wav', 'aac'); //Default is mp3, compatible everywhere. Wav is greater quality and is seamless in loops, but doesn't work on iOS automatically.
   //-DRUMS-//////////////////////////////////////////////
-  drums1 = loadSound('assets/fx/cybrcity/drums_01.wav');
-  drums2 = loadSound('assets/fx/cybrcity/drums_02.wav');
-  drums3 = loadSound('assets/fx/cybrcity/drums_03.wav');
+  drums1 = loadSound('assets/themes/synthwave/drums1.wav');
+  drums2 = loadSound('assets/themes/synthwave/drums1.wav');
+  drums3 = loadSound('assets/themes/synthwave/drums1.wav');
 
   //-LEAD SYNTH-//////////////////////////////////////////////
-  synth = loadSound('assets/fx/cybrcity/lead.wav');
+  synth = loadSound('assets/themes/synthwave/lead.wav');
 
   //-BASS-//////////////////////////////////////////////
-  bass = loadSound('assets/fx/cybrcity/bass.wav');
+  bass = loadSound('assets/themes/synthwave/bass.wav');
 
   //-PLUCKS-//////////////////////////////////////////////
-  plucks = loadSound('assets/fx/cybrcity/synth2.wav');
+  plucks = loadSound('assets/themes/synthwave/synth.wav');
 
   //-ARP-//////////////////////////////////////////////
-  arp = loadSound('assets/fx/cybrcity/arp.wav');
+  arp = loadSound('assets/themes/synthwave/arp.wav');
 
   //-PADS-//////////////////////////////////////////////
-  pads = loadSound('assets/fx/cybrcity/pads.wav');
+  pads = loadSound('assets/themes/synthwave/pads.wav');
 }
 
 function setup()
@@ -282,7 +284,7 @@ function keyTyped()
   //contents += key;
 }
 
-// FUNCTIONS
+// FUNCTIONS ---------------------------------------------
 
 function updatePixelDensity()
 {
