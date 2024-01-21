@@ -335,6 +335,9 @@ function changeTheme(themeName)
 {
   clear(); // clear the canvas before switching theme
 
+  // Hide the menu
+  menu.classList.remove('show-menu');
+
   switch(themeName) {
     case 'synthwave':
       currentTheme = synthwave;
