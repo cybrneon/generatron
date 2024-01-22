@@ -637,14 +637,58 @@ generatron-p5sketch
 {
   margin-top: 20px;
   height: 80vh;
-  padding: 32px;
+  padding: 64px;
   display: flex;
   justify-content: center;
-  background-color: #EE754B;
+  background-color: #272729;
   border-radius: 10px;
+}
+
+.about-section-content
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+}
+
+.about-section h2
+{
+  margin: 0;
+  padding: 0;
+}
+
+.about-section p
+{
+  font-size: 16px;
+}
+
+.about-section img
+{
+  text-align: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 100vh;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .about-section h2, p
 {
   text-align: center;
+}
+
+.footer-text
+{
+  margin-top: 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+
+  background-color: #272729;
 }
