@@ -181,6 +181,7 @@ generatron-p5sketch
   display: flex;
   align-items: center;
   gap: 15px;
+  width: 100%;
 }
 
 .menu li a
@@ -203,6 +204,7 @@ generatron-p5sketch
 .menu-main-items li a
 {
   height: 100px;
+  width: 100%;
   font-size: 60px;
   padding: 20px;
 }
@@ -210,9 +212,14 @@ generatron-p5sketch
 .menu-secondary-items li a
 {
   height: 50px;
+  width: 100%;
   font-size: 30px;
   padding: 10px;
   padding-left: 20px;
+}
+
+.menu-secondary-items li:last-child a { /* Make the last item (Pixel Density) not go 100% on the width*/
+  width: auto;
 }
 
 #pixelDensitySlider
@@ -612,6 +619,6 @@ generatron-p5sketch
 {
   margin: 0;
   padding: 0;
-  max-width: 58%;
+  max-width: 54%;
   font-size: 30px;
 }
