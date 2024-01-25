@@ -19,6 +19,16 @@ let pixelDensitySlider;
 
 //let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp; let pads;
 
+// Create a mapping between theme names and display names for a more stylized display
+var themeDisplayNames =
+{
+  'synthwave': 'SYNTHWAVE',
+  'retrowave': 'RETROWAVE',
+  'futurefunk': 'FUTURE FUNK',
+  'house': 'HOUSE',
+  'ambiant': 'AMBIANT'
+};
+
 class Theme {
   constructor(name) {
     this.name = name;
@@ -48,6 +58,7 @@ let synthwave;
 let retrowave;
 let futurefunk;
 let house;
+let ambiant;
 let currentTheme;
 
 
@@ -71,6 +82,9 @@ function preload()
   //retrowave.loadSounds();
 
   //retrowave = new Theme('house');
+  //retrowave.loadSounds();
+
+  //retrowave = new Theme('ambiant');
   //retrowave.loadSounds();
 }
 
@@ -338,7 +352,8 @@ function changeTheme(themeName)
   // Hide the menu
   menu.classList.remove('show-menu');
 
-  switch(themeName) {
+  switch(themeName)
+  {
     case 'synthwave':
       currentTheme = synthwave;
       break;
@@ -351,10 +366,19 @@ function changeTheme(themeName)
     case 'house':
       currentTheme = house;
       break;
-    case 'unknown':
-      // handle the unknown theme
+    case 'ambiant':
+      currentTheme = ambiant;
       break;
     default:
       console.log('Unknown theme: ' + themeName);
   }
+
+  // Get a reference to the current theme element
+  var currentThemeElement = document.getElementById('generatron-logo-text-currentheme');
+
+  // Look up the display name for the current theme
+  var themeDisplayName = themeDisplayNames[themeName];
+
+  // Update the current theme element with the display name of the current theme
+  currentThemeElement.textContent = themeDisplayName;
 }

@@ -132,6 +132,21 @@ generatron-p5sketch
 {
   padding: 20px;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+#generatron-logo-text-currentheme
+{
+  opacity: 65%;
+  transition: 0.5s ease-in-out;
+}
+
+#generatron-logo-text-currentheme:hover
+{
+  opacity: 100%;
 }
 
 .generatron-logo img
