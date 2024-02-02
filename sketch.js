@@ -17,8 +17,6 @@ let fr = 60;
 let pixelDensitySlider;
 //let contents = ""; -- Typing Text feature removed for the moment
 
-//let drums1; let drums2; let drums3; let lead; let bass; let plucks; let arp; let pads;
-
 // Create a mapping between theme names and display names for a more stylized display
 var themeDisplayNames =
 {
@@ -37,11 +35,11 @@ class Theme
     this.drums1 = null;
     this.drums2 = null;
     this.drums3 = null;
-    this.lead = null;
-    this.bass = null;
-    this.plucks = null;
-    this.arp = null;
-    this.pads = null;
+    this.lead = null; //lead
+    this.inst1 = null; //pads
+    this.inst2 = null; //plucks
+    this.inst3 = null; //arp
+    this.bass = null; //bass
   }
 
   loadSounds()
@@ -50,10 +48,10 @@ class Theme
     this.drums2 = loadSound(`assets/themes/${this.name}/drums2.wav`);
     this.drums3 = loadSound(`assets/themes/${this.name}/drums3.wav`);
     this.lead = loadSound(`assets/themes/${this.name}/lead.wav`);
+    this.inst1 = loadSound(`assets/themes/${this.name}/pads.wav`);
+    this.inst2 = loadSound(`assets/themes/${this.name}/synth.wav`);
+    this.inst3 = loadSound(`assets/themes/${this.name}/arp.wav`);
     this.bass = loadSound(`assets/themes/${this.name}/bass.wav`);
-    this.plucks = loadSound(`assets/themes/${this.name}/synth.wav`);
-    this.arp = loadSound(`assets/themes/${this.name}/arp.wav`);
-    this.pads = loadSound(`assets/themes/${this.name}/pads.wav`);
   }
 }
 
@@ -84,11 +82,11 @@ function preload()
   futurefunk = new Theme('futurefunk');
   futurefunk.loadSounds();
 
-  house = new Theme('house');
-  house.loadSounds();
+  //house = new Theme('house');
+  //house.loadSounds();
 
-  ambiant = new Theme('ambiant');
-  ambiant.loadSounds();
+  //ambiant = new Theme('ambiant');
+  //ambiant.loadSounds();
 }
 
 function setup()
@@ -234,8 +232,8 @@ function mouseReleased()
 
 function keyTyped()
 {
-  //SYNTH / LEAD
-  if (key == 's') //plays synth
+  //LEAD
+  if (key == 's') //plays lead
   {
     console.log(currentTheme.drums1.isPlaying()+0);
     
@@ -267,47 +265,47 @@ function keyTyped()
   }
   
   //PLUCKS
-  if (key == 'd') //plays plucks
+  if (key == 'd') //plays instrument 1
   {    
-    if (currentTheme.plucks.isPlaying())
+    if (currentTheme.inst1.isPlaying())
     {
       //.isPlaying() returns a boolean
-      currentTheme.plucks.stop();
+      currentTheme.inst1.stop();
     }
     else 
     {
-      currentTheme.plucks.loop();
-      currentTheme.plucks.amp(0.6); //volume
+      currentTheme.inst1.loop();
+      currentTheme.inst1.amp(0.6); //volume
     }
   }
 
     //ARP
-    if (key == 'a') //plays arp
+    if (key == 'a') //plays instrument 2
     {    
-      if (currentTheme.arp.isPlaying())
+      if (currentTheme.inst2.isPlaying())
       {
         //.isPlaying() returns a boolean
-        currentTheme.arp.stop();
+        currentTheme.inst2.stop();
       }
       else 
       {
-        currentTheme.arp.loop();
-        currentTheme.arp.amp(0.8); //volume
+        currentTheme.inst2.loop();
+        currentTheme.inst2.amp(0.8); //volume
       }
     }
 
     //PADS
-    if (key == 'w') //plays pads
+    if (key == 'w') //plays instrument 3
     {    
-      if (currentTheme.pads.isPlaying())
+      if (currentTheme.inst3.isPlaying())
       {
         //.isPlaying() returns a boolean
-        currentTheme.pads.stop();
+        currentTheme.inst3.stop();
       }
       else 
       {
-        currentTheme.pads.loop();
-        currentTheme.pads.amp(0.4); //volume
+        currentTheme.inst3.loop();
+        currentTheme.inst3.amp(0.4); //volume
       }
     }
   
