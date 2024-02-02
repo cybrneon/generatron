@@ -29,8 +29,10 @@ var themeDisplayNames =
   'ambiant': 'AMBIANT'
 };
 
-class Theme {
-  constructor(name) {
+class Theme
+{
+  constructor(name)
+  {
     this.name = name;
     this.drums1 = null;
     this.drums2 = null;
@@ -42,7 +44,8 @@ class Theme {
     this.pads = null;
   }
 
-  loadSounds() {
+  loadSounds()
+  {
     this.drums1 = loadSound(`assets/themes/${this.name}/drums1.wav`);
     this.drums2 = loadSound(`assets/themes/${this.name}/drums2.wav`);
     this.drums3 = loadSound(`assets/themes/${this.name}/drums3.wav`);
@@ -81,11 +84,11 @@ function preload()
   futurefunk = new Theme('futurefunk');
   futurefunk.loadSounds();
 
-  //retrowave = new Theme('house');
-  //retrowave.loadSounds();
+  house = new Theme('house');
+  house.loadSounds();
 
-  //retrowave = new Theme('ambiant');
-  //retrowave.loadSounds();
+  ambiant = new Theme('ambiant');
+  ambiant.loadSounds();
 }
 
 function setup()
