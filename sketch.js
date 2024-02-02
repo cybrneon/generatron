@@ -17,7 +17,7 @@ let fr = 60;
 let pixelDensitySlider;
 //let contents = ""; -- Typing Text feature removed for the moment
 
-//let drums1; let drums2; let drums3; let synth; let bass; let plucks; let arp; let pads;
+//let drums1; let drums2; let drums3; let lead; let bass; let plucks; let arp; let pads;
 
 // Create a mapping between theme names and display names for a more stylized display
 var themeDisplayNames =
@@ -35,7 +35,7 @@ class Theme {
     this.drums1 = null;
     this.drums2 = null;
     this.drums3 = null;
-    this.synth = null;
+    this.lead = null;
     this.bass = null;
     this.plucks = null;
     this.arp = null;
@@ -46,7 +46,7 @@ class Theme {
     this.drums1 = loadSound(`assets/themes/${this.name}/drums1.wav`);
     this.drums2 = loadSound(`assets/themes/${this.name}/drums2.wav`);
     this.drums3 = loadSound(`assets/themes/${this.name}/drums3.wav`);
-    this.synth = loadSound(`assets/themes/${this.name}/lead.wav`);
+    this.lead = loadSound(`assets/themes/${this.name}/lead.wav`);
     this.bass = loadSound(`assets/themes/${this.name}/bass.wav`);
     this.plucks = loadSound(`assets/themes/${this.name}/synth.wav`);
     this.arp = loadSound(`assets/themes/${this.name}/arp.wav`);
@@ -78,8 +78,8 @@ function preload()
   retrowave = new Theme('retrowave');
   retrowave.loadSounds();
 
-  //retrowave = new Theme('futurefunk');
-  //retrowave.loadSounds();
+  futurefunk = new Theme('futurefunk');
+  futurefunk.loadSounds();
 
   //retrowave = new Theme('house');
   //retrowave.loadSounds();
@@ -231,20 +231,20 @@ function mouseReleased()
 
 function keyTyped()
 {
-  //SYNTH
+  //SYNTH / LEAD
   if (key == 's') //plays synth
   {
     console.log(currentTheme.drums1.isPlaying()+0);
     
-    if (currentTheme.synth.isPlaying())
+    if (currentTheme.lead.isPlaying())
     {
       //.isPlaying() returns a boolean
-      currentTheme.synth.stop();
+      currentTheme.lead.stop();
     }
     else 
     {
-      currentTheme.synth.loop();
-      currentTheme.synth.amp(0.8); //volume
+      currentTheme.lead.loop();
+      currentTheme.lead.amp(0.8); //volume
     }
   }
   
