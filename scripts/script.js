@@ -22,6 +22,8 @@ document.addEventListener('click', function(event)
 
 /* ----------------------- User Agent Sniffing Script ----------------------- */
 
+/* NOT ENABLED, YET
+
 // Function to check if the device is mobile
 function isMobileDevice()
 {
@@ -30,6 +32,7 @@ function isMobileDevice()
   // Return true if the user agent matches 'Mobi' or 'Android' (case insensitive)
   return /Mobi|Android/i.test(navigator.userAgent);
 }
+
 
 // Add an event listener for the DOMContentLoaded event
 // This event fires when the initial HTML document has been completely loaded and parsed
@@ -60,3 +63,5 @@ document.addEventListener('DOMContentLoaded', function()
     controlsMobile.style.display = 'none';
   }
 });
+
+*/

@@ -150,6 +150,8 @@ generatron-p5sketch
 {
   opacity: 65%;
   transition: 0.5s ease-in-out;
+  width: 100px;
+  text-align: left;
 }
 
 #generatron-logo-text-currentheme:hover
@@ -179,12 +181,14 @@ generatron-p5sketch
   padding: 20px;
   padding-right: 30px;
   opacity: 15%;
+  text-align: right;
 }
 
 .menu
 {
   position: fixed;
   width: 50%;
+  min-width: 450px;
   height: 100vh;
   background-color: #000000;
   transform: translateX(-1000px);
@@ -465,7 +469,7 @@ generatron-p5sketch
 
 .controls-desktop:not(:hover)
 {
-  transition-delay: 2s;
+  transition-delay: 0.5s;
 }
 
 .keys
@@ -491,6 +495,14 @@ generatron-p5sketch
   align-items: center;
   justify-content: center;
   width: 48px;
+
+  pointer-events: none;
+}
+
+@media (max-width: 768px) { /* Adjust 768px to your desired mobile breakpoint */
+  .key-button {
+    pointer-events: auto;
+  }
 }
 
 .capture
@@ -509,7 +521,7 @@ generatron-p5sketch
 
 .capture:not(:hover)
 {
-  transition-delay: 2s;
+  transition-delay: 0.5s;
 }
 
 .capture-keys
@@ -539,9 +551,9 @@ generatron-p5sketch
 /* ------------------------------- MOBILE ------------------------------- */
 .controls-mobile
 {
-  
+  /*
   display: none;
-  
+  */
   position: absolute;
   width: 100%;
   height: 315px;

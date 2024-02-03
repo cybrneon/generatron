@@ -135,11 +135,14 @@ function setup()
     pixelDensity(storedPixelDensity);
   }
 
-
-  /*Mobile controls buttons
-  button = createButton("S");
-  button = createButton("D");
-  button = createButton("B");*/
+  // Add an event listener to the document to resume the AudioContext after the user's first interaction
+  document.addEventListener('click', function()
+  {
+    if (typeof p5 !== 'undefined' && p5.soundOut.audiocontext)
+    {
+      p5.soundOut.audiocontext.resume();
+    }
+  });
 }
 
 function windowResized()
@@ -149,9 +152,6 @@ function windowResized()
 
 function draw()
 {
-  //textSize(32);
-  //text('Press a key or mouse to start.', 10, 20);
-  
   if(mouseIsPressed)
   {
 
@@ -232,84 +232,37 @@ function mouseReleased()
   }
 }
 
-function keyTyped()
+function keyTyped() // Detecting keyboard input and playing sounds
 {
   //LEAD
   if (key == 's') //plays lead
   {
-    console.log(currentTheme.drums1.isPlaying()+0);
-    
-    if (currentTheme.lead.isPlaying())
-    {
-      //.isPlaying() returns a boolean
-      currentTheme.lead.stop();
-    }
-    else 
-    {
-      currentTheme.lead.loop();
-      currentTheme.lead.amp(0.8); //volume
-    }
+    playLead();
   }
   
   //BASS
   if (key == 'b') //plays bass
   {    
-    if (currentTheme.bass.isPlaying())
-    {
-      //.isPlaying() returns a boolean
-      currentTheme.bass.stop();
-    }
-    else 
-    {
-      currentTheme.bass.loop();
-      currentTheme.bass.amp(0.8); //volume
-    }
+    playBass();
   }
   
-  //PLUCKS
+  //INST1
   if (key == 'd') //plays instrument 1
   {    
-    if (currentTheme.inst1.isPlaying())
-    {
-      //.isPlaying() returns a boolean
-      currentTheme.inst1.stop();
-    }
-    else 
-    {
-      currentTheme.inst1.loop();
-      currentTheme.inst1.amp(0.6); //volume
-    }
+    playInst1();
   }
 
-    //ARP
-    if (key == 'a') //plays instrument 2
-    {    
-      if (currentTheme.inst2.isPlaying())
-      {
-        //.isPlaying() returns a boolean
-        currentTheme.inst2.stop();
-      }
-      else 
-      {
-        currentTheme.inst2.loop();
-        currentTheme.inst2.amp(0.8); //volume
-      }
-    }
+  //INST2
+  if (key == 'a') //plays instrument 2
+  {    
+    playInst2();
+  }
 
-    //PADS
-    if (key == 'w') //plays instrument 3
-    {    
-      if (currentTheme.inst3.isPlaying())
-      {
-        //.isPlaying() returns a boolean
-        currentTheme.inst3.stop();
-      }
-      else 
-      {
-        currentTheme.inst3.loop();
-        currentTheme.inst3.amp(0.4); //volume
-      }
-    }
+  //INST3
+  if (key == 'w') //plays instrument 3
+  {    
+    playInst3();
+  }
   
   //save artwork with the P key.
   if (key == 'p')
@@ -326,7 +279,112 @@ function keyTyped()
   //contents += key;
 }
 
-// FUNCTIONS ---------------------------------------------
+// detect the click on the control buttons and play sounds
+function attachButtonListener(buttonId, playSoundFunction) {
+  var button = document.getElementById(buttonId);
+  var gradient = "linear-gradient(180deg, #67D30F 0%, #3F8208 100%)"; // green gradient
+  var isOriginal = true; // flag to track the button state
+
+  button.addEventListener('click', function() {
+    if (isOriginal) {
+      this.style.background = gradient; // change color to gradient
+      isOriginal = false;
+    } else {
+      this.style.background = ""; // revert to original color
+      isOriginal = true;
+    }
+    playSoundFunction();
+  });
+}
+
+// Usage
+attachButtonListener('lead-button', playLead);
+attachButtonListener('bass-button', playBass);
+attachButtonListener('inst1-button', playInst1);
+attachButtonListener('inst2-button', playInst2);
+attachButtonListener('inst3-button', playInst3);
+
+var button = document.querySelector('.canvas-screenshot-button');
+button.addEventListener('click', function()
+{
+  CaptureScreenshot();
+});
+
+
+// TRACKS FUNCTIONS ---------------------------------------------
+function playLead()
+{
+  console.log(currentTheme.drums1.isPlaying()+0);
+    
+    if (currentTheme.lead.isPlaying())
+    {
+      //.isPlaying() returns a boolean
+      currentTheme.lead.stop();
+    }
+    else 
+    {
+      currentTheme.lead.loop();
+      currentTheme.lead.amp(0.8); //volume
+    }
+}
+
+function playBass()
+{
+  if (currentTheme.bass.isPlaying())
+    {
+      //.isPlaying() returns a boolean
+      currentTheme.bass.stop();
+    }
+    else 
+    {
+      currentTheme.bass.loop();
+      currentTheme.bass.amp(0.8); //volume
+    }
+}
+
+function playInst1()
+{
+  if (currentTheme.inst1.isPlaying())
+    {
+      //.isPlaying() returns a boolean
+      currentTheme.inst1.stop();
+    }
+    else 
+    {
+      currentTheme.inst1.loop();
+      currentTheme.inst1.amp(0.6); //volume
+    }
+}
+
+function playInst2()
+{
+  if (currentTheme.inst2.isPlaying())
+    {
+      //.isPlaying() returns a boolean
+      currentTheme.inst2.stop();
+    }
+    else 
+    {
+      currentTheme.inst2.loop();
+      currentTheme.inst2.amp(0.6); //volume
+    }
+}
+
+function playInst3()
+{
+  if (currentTheme.inst3.isPlaying())
+    {
+      //.isPlaying() returns a boolean
+      currentTheme.inst3.stop();
+    }
+    else 
+    {
+      currentTheme.inst3.loop();
+      currentTheme.inst3.amp(0.6); //volume
+    }
+}
+
+// OTHER FUNCTIONS ---------------------------------------------
 
 function updatePixelDensity()
 {
