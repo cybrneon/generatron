@@ -51,7 +51,6 @@ body
 {
   background-color: black;
   font-family: 'Gangster', sans-serif;
-  overflow: hidden;
 }
 
 canvas /* sets the p5.js canvas to BLOCK*/
@@ -72,6 +71,11 @@ h1, h2, h3, h4, h5, h6
   color:white;
   text-align: left;
   padding-left: 2rem;
+}
+
+h1
+{
+  font-size: 60px;
 }
 
 p
@@ -669,8 +673,38 @@ generatron-p5sketch
   align-items: flex-start;
   padding: 32px;
   gap: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-  background-color: #EE754B;
+.hero-about::after /* the blurred gradient*/
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  /* Use backdrop-filter for blur effect */
+  backdrop-filter: blur(30px);
+  /* Create a gradient mask */
+  background: linear-gradient(to top, black 0%, transparent 100%);
+  /* Apply the mask to the backdrop-filter */
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-video
+{
+  position:absolute;
+  object-fit: cover;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
   border-radius: 10px;
 }
 
@@ -696,6 +730,7 @@ generatron-p5sketch
   margin: 0;
   padding: 0;
   font-size: 60px;
+  z-index: 2;
 }
 
 .hero-subtitle
@@ -704,12 +739,29 @@ generatron-p5sketch
   padding: 0;
   max-width: 54%;
   font-size: 30px;
+  z-index: 2;
+}
+
+/* mobile sizes */
+@media (max-width: 768px)
+{
+  .hero-title
+  {
+    font-size: 32px;
+  }
+
+  .hero-subtitle
+  {
+    max-width: 100%;
+    font-size: 20px;
+  }
 }
 
 .hero-buttons
 {
   display: flex;
   gap: 10px;
+  z-index: 2;
 }
 
 .about-section
@@ -729,30 +781,39 @@ generatron-p5sketch
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 90%;
 }
 
 .about-section h2
 {
   margin: 0;
   padding: 0;
+  max-width: 78%;
 }
 
 .about-section p
 {
   font-size: 16px;
+  max-width: 85%;
 }
 
 .about-section img
 {
-  text-align: center;
-  align-self: center;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
   max-width: 100vh;
   display: block;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 768px)
+{
+  .about-section img
+  {
+    width: auto;
+    height: 300px;
+  }
+
 }
 
 .about-section h2, p
