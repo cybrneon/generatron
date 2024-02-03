@@ -36,9 +36,9 @@ class Theme
     this.drums2 = null;
     this.drums3 = null;
     this.lead = null; //lead
-    this.inst1 = null; //pads
-    this.inst2 = null; //plucks
-    this.inst3 = null; //arp
+    this.inst1 = null; //inst1 / pads
+    this.inst2 = null; //inst2 / plucks
+    this.inst3 = null; //inst3 / arp
     this.bass = null; //bass
   }
 
@@ -48,9 +48,9 @@ class Theme
     this.drums2 = loadSound(`assets/themes/${this.name}/drums2.wav`);
     this.drums3 = loadSound(`assets/themes/${this.name}/drums3.wav`);
     this.lead = loadSound(`assets/themes/${this.name}/lead.wav`);
-    this.inst1 = loadSound(`assets/themes/${this.name}/pads.wav`);
-    this.inst2 = loadSound(`assets/themes/${this.name}/synth.wav`);
-    this.inst3 = loadSound(`assets/themes/${this.name}/arp.wav`);
+    this.inst1 = loadSound(`assets/themes/${this.name}/inst1.wav`);
+    this.inst2 = loadSound(`assets/themes/${this.name}/inst2.wav`);
+    this.inst3 = loadSound(`assets/themes/${this.name}/inst3.wav`);
     this.bass = loadSound(`assets/themes/${this.name}/bass.wav`);
   }
 }
