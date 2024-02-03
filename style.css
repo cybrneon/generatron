@@ -35,8 +35,7 @@ html
   margin: 0;
   padding: 0;
   max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 /* BODY FOR STATIC WEBPAGES ONLY (UNSUED)
@@ -52,11 +51,20 @@ body
 {
   background-color: black;
   font-family: 'Gangster', sans-serif;
+  overflow: hidden;
 }
 
 canvas /* sets the p5.js canvas to BLOCK*/
 {
   display: block;
+  box-sizing: border-box;
+}
+
+#canvas-container
+{
+  width: 100%; /* Adjust as needed */
+  height: 100vh; /* Adjust as needed */
+  overflow: hidden; /* This will prevent overflow caused by the canvas */
 }
 
 h1, h2, h3, h4, h5, h6
@@ -427,6 +435,7 @@ generatron-p5sketch
   align-items: center;
 }
 
+/*
 .compatiblity-alert-ios
 {
   display: none;
@@ -438,8 +447,9 @@ generatron-p5sketch
 {
   color: white;
 }
+*/
 
-.controls
+.controls-desktop
 {
   position: absolute;
   bottom: 40px;
@@ -448,12 +458,12 @@ generatron-p5sketch
   transition: opacity 0.5s ease-in-out;
 }
 
-.controls:hover
+.controls-desktop:hover
 {
   opacity: 1;
 }
 
-.controls:not(:hover)
+.controls-desktop:not(:hover)
 {
   transition-delay: 2s;
 }
@@ -526,16 +536,23 @@ generatron-p5sketch
   }
 }
 
-/* show controls on mobile only*/
-
-/*@media not screen and (min-width: 1024px)
+/* ------------------------------- MOBILE ------------------------------- */
+.controls-mobile
 {
-  .mobile-control button
-  {
-    display:flex;
-  }
+  display: none;
 }
-*/
+
+.joystick
+{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  touch-action: none;
+}
 
 .sketch-overlay
 {
