@@ -800,10 +800,10 @@ generatron-p5sketch
 {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
-  max-width: 100vh;
+  width: 50%;
   display: block;
   margin-bottom: 1rem;
+  filter: drop-shadow(0px 31px 69px rgba(0, 0, 0, 0.10)) drop-shadow(0px 125px 125px rgba(0, 0, 0, 0.09)) drop-shadow(0px 281px 169px rgba(0, 0, 0, 0.05));
 }
 
 @media (max-width: 768px)

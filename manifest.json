@@ -2,16 +2,56 @@
 {
     "manifest_version": 3,
     "name": "GENERATRON",
-    "version": "0.3.4",
+    "version": "2.0",
   
-    "codename":"Red Platinum",
+    "codename":"whistler",
     "default_locale": "en",
     "description": "A plain text description",
     "icons":
     [
         {
-          "src": "assets/img/logos/generatron.svg",
-          "type": "image/svg+xml",
+          "src": "/assets/img/logos/icons/icon-72x72.png",
+          "type": "image/png",
+          "sizes": "72x72"
+        },
+        {
+          "src": "/assets/img/logos/icons/icon-96x96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        },
+        {
+          "src": "/assets/img/logos/icons/icon-128x128.png",
+          "type": "image/png",
+          "sizes": "128x128"
+        },
+        {
+          "src": "/assets/img/logos/icons/icon-144x144.png",
+          "type": "image/png",
+          "sizes": "144x144"
+        },
+        {
+          "src": "/assets/img/logos/icons/icon-152x152.png",
+          "type": "image/png",
+          "sizes": "152x152"
+        },
+        {
+          "src": "/assets/img/logos/icons/icon-180x180.png",
+          "type": "image/png",
+          "sizes": "180x180"
+        }
+        {
+          "src": "/assets/img/logos/icons/icon-192x192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "/assets/img/logos/icons/icon-384x384.png",
+          "type": "image/png",
+          "sizes": "384x384"
+        },
+        {
+          "src": "/assets/img/logos/icons/icon-512x512.png",
+          "type": "image/png",
           "sizes": "512x512"
         }
     ]
