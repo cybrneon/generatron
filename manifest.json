@@ -3,10 +3,12 @@
     "manifest_version": 3,
     "name": "GENERATRON",
     "version": "2.0",
-  
     "codename":"whistler",
     "default_locale": "en",
     "description": "A plain text description",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "theme_color": "#000000",
     "icons":
     [
         {
@@ -58,6 +60,20 @@
           "src": "/assets/img/logos/icons/icon-1080x1080.png",
           "type": "image/png",
           "sizes": "1080x1080"
+        }
+      ],
+    "screenshots:": [
+        {
+            "src": "/assets/img/screenshots/generatron-pwa-screenshot1.png",
+            "type": "image/png",
+            "sizes": "2734×1886",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/assets/img/screenshots/generatron-pwa-screenshot2.png",
+            "type": "image/png",
+            "sizes": "828×1792",
+            "form_factor": "tall"
         }
     ]
 }

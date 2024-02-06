@@ -443,20 +443,6 @@ generatron-p5sketch
   align-items: center;
 }
 
-/*
-.compatiblity-alert-ios
-{
-  display: none;
-  height: 70px;
-  background-color: red;
-}
-
-.compatiblity-alert-ios p
-{
-  color: white;
-}
-*/
-
 .controls-desktop
 {
   position: absolute;
@@ -549,6 +535,35 @@ generatron-p5sketch
   .introductory-text /* The initiator text */
   {
     display: none;
+  }
+}
+
+#loading-screen
+{
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  animation: slideIn 0.5s cubic-bezier(0.5, 0, 0.25, 1) forwards;
+}
+
+@keyframes slideIn
+{
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

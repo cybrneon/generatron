@@ -134,15 +134,6 @@ function setup()
     pixelDensityLabel.html(storedPixelDensity);
     pixelDensity(storedPixelDensity);
   }
-
-  // Add an event listener to the document to resume the AudioContext after the user's first interaction
-  document.addEventListener('click', function()
-  {
-    if (typeof p5 !== 'undefined' && p5.soundOut.audiocontext)
-    {
-      p5.soundOut.audiocontext.resume();
-    }
-  });
 }
 
 function windowResized()
@@ -154,7 +145,6 @@ function draw()
 {
   if(mouseIsPressed)
   {
-
     cursor(CROSS);
     if (mouseButton === LEFT) 
     {
@@ -280,16 +270,21 @@ function keyTyped() // Detecting keyboard input and playing sounds
 }
 
 // detect the click on the control buttons and play sounds
-function attachButtonListener(buttonId, playSoundFunction) {
+function attachButtonListener(buttonId, playSoundFunction)
+{
   var button = document.getElementById(buttonId);
   var gradient = "linear-gradient(180deg, #67D30F 0%, #3F8208 100%)"; // green gradient
   var isOriginal = true; // flag to track the button state
 
-  button.addEventListener('click', function() {
-    if (isOriginal) {
+  button.addEventListener('click', function()
+  {
+    if (isOriginal)
+    {
       this.style.background = gradient; // change color to gradient
       isOriginal = false;
-    } else {
+    }
+    else
+    {
       this.style.background = ""; // revert to original color
       isOriginal = true;
     }
@@ -314,8 +309,6 @@ button.addEventListener('click', function()
 // TRACKS FUNCTIONS ---------------------------------------------
 function playLead()
 {
-  console.log(currentTheme.drums1.isPlaying()+0);
-    
     if (currentTheme.lead.isPlaying())
     {
       //.isPlaying() returns a boolean
@@ -386,6 +379,12 @@ function playInst3()
 
 // OTHER FUNCTIONS ---------------------------------------------
 
+function touchMoved()
+{
+  // prevent default
+  return false;
+}
+
 function updatePixelDensity()
 {
   let pixelDensityValue = pixelDensitySlider.value();
@@ -403,11 +402,37 @@ function updatePixelDensity()
 
 function CaptureScreenshot()
 {
-  save("GENERATRON_design.png");
+  let now = new Date();
+  let timestamp = now.getFullYear() + '-' +
+                  ('0' + (now.getMonth()+1)).slice(-2) + '-' +
+                  ('0' + now.getDate()).slice(-2) + '_' +
+                  ('0' + now.getHours()).slice(-2) + '-' +
+                  ('0' + now.getMinutes()).slice(-2) + '-' +
+                  ('0' + now.getSeconds()).slice(-2);
+  save("GENERATRON_design_" + timestamp + ".png");
 }
 
 function changeTheme(themeName)
 {
+    // Remove and re-add the loading screen to reset the animation
+    var loadingScreen = document.getElementById('loading-screen');
+    var newLoadingScreen = loadingScreen.cloneNode(true);
+    loadingScreen.parentNode.replaceChild(newLoadingScreen, loadingScreen);
+  
+    // Show the new loading screen
+    newLoadingScreen.style.display = 'flex';
+
+  // If currentTheme is an object containing sounds, stop them
+  if (currentTheme)
+  {
+    for (let key in currentTheme)
+    {
+      if (currentTheme[key] && typeof currentTheme[key].stop === 'function')
+      {
+        currentTheme[key].stop();
+      }
+    }
+  }
   clear(); // clear the canvas before switching theme
 
   // Hide the menu
@@ -442,4 +467,16 @@ function changeTheme(themeName)
 
   // Update the current theme element with the display name of the current theme
   currentThemeElement.textContent = themeDisplayName;
+
+  // Reset the background color of all control buttons
+  var buttons = document.querySelectorAll('.key-button');
+  buttons.forEach(button =>
+  {
+    button.style.background = "";
+  });
+
+  // Hide the loading screen after a delay
+  setTimeout(function() {
+    newLoadingScreen.style.display = 'none';
+  }, 1000); // delay in milliseconds
 }
