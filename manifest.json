@@ -38,7 +38,7 @@
           "src": "/assets/img/logos/icons/icon-180x180.png",
           "type": "image/png",
           "sizes": "180x180"
-        }
+        },
         {
           "src": "/assets/img/logos/icons/icon-192x192.png",
           "type": "image/png",
@@ -53,6 +53,11 @@
           "src": "/assets/img/logos/icons/icon-512x512.png",
           "type": "image/png",
           "sizes": "512x512"
+        }
+        {
+          "src": "/assets/img/logos/icons/icon-1080x1080.png",
+          "type": "image/png",
+          "sizes": "1080x1080"
         }
     ]
 }

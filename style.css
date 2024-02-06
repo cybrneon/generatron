@@ -725,6 +725,12 @@ generatron-p5sketch
   border-radius: 10px;
 }
 
+.hero-icon
+{
+  height: 64px;
+  z-index: 2;
+}
+
 .hero-title
 {
   margin: 0;
@@ -800,8 +806,9 @@ generatron-p5sketch
 {
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  max-height: 80%;
   display: block;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   filter: drop-shadow(0px 31px 69px rgba(0, 0, 0, 0.10)) drop-shadow(0px 125px 125px rgba(0, 0, 0, 0.09)) drop-shadow(0px 281px 169px rgba(0, 0, 0, 0.05));
 }
@@ -819,6 +826,15 @@ generatron-p5sketch
 .about-section h2, p
 {
   text-align: center;
+}
+
+.end-love-icon
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 48px;
+  margin: 32px auto;
 }
 
 .footer-text
