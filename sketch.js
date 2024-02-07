@@ -311,12 +311,12 @@ function setup()
   // If a theme was selected, apply it
   if (params.theme)
   {
-    changeTheme(params.theme);
+    changeTheme(params.theme, true);
   }
   else
   {
     // If no theme was selected, use the default theme
-    changeTheme('default');
+    changeTheme('synthwave', false);
   }
   
   
@@ -605,15 +605,24 @@ function ClearCanvasAndSound()
   return false; // prevent default browser behavior
 }
 
-function changeTheme(themeName)
+function changeTheme(themeName, showLoadingScreen = true)
 {
+  // Remove and re-add the loading screen to reset the animation
+  var loadingScreen = document.getElementById('loading-screen');
+  // If showLoadingScreen is true, show the loading screen
+  if (showLoadingScreen)
+  {
+    // Hide the original loading screen
+    loadingScreen.style.display = 'none';
+
     // Remove and re-add the loading screen to reset the animation
-    var loadingScreen = document.getElementById('loading-screen');
     var newLoadingScreen = loadingScreen.cloneNode(true);
     loadingScreen.parentNode.replaceChild(newLoadingScreen, loadingScreen);
-  
-    // Show the new loading screen
-    newLoadingScreen.style.display = 'flex';
+    // Delay the display of the new loading screen by 100 milliseconds
+    setTimeout(function() {
+      newLoadingScreen.style.display = 'flex';
+    }, 100);
+  }
 
   // If currentTheme is an object containing sounds, stop them
   if (currentTheme)
@@ -669,7 +678,8 @@ function changeTheme(themeName)
   });
 
   // Hide the loading screen after a delay
-  setTimeout(function() {
+  setTimeout(function()
+  {
     newLoadingScreen.style.display = 'none';
   }, 1000); // delay in milliseconds
 }
