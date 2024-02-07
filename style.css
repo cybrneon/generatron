@@ -334,6 +334,11 @@ generatron-p5sketch
   opacity: 100%;
 }
 
+.menu-info img
+{
+  height: 22px;
+}
+
 .menu-info-version-and-socials
 {
   width: 100%;

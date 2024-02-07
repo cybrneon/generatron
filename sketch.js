@@ -53,6 +53,207 @@ class Theme
     this.inst3 = loadSound(`assets/themes/${this.name}/inst3.wav`);
     this.bass = loadSound(`assets/themes/${this.name}/bass.wav`);
   }
+
+  // Theme specific draw function
+  draw()
+  {
+    if (this.name === 'synthwave') // SYNTWAVE VISUALS <----------
+    {
+      cursor(CROSS); // set the cursor to cross
+      if(mouseIsPressed)
+      {
+        if (mouseButton === LEFT) 
+        {
+          normalMaterial();
+          stroke(0);
+        }
+        if (mouseButton === RIGHT) 
+        {
+          fill('#B1BEC3');
+          stroke('#0066FF');
+        }
+        if (mouseButton === CENTER) 
+        {
+          sphere(150);
+          texture(skyCubeTexture);
+          stroke(0);
+        }
+      }
+      else
+      {
+        fill(0); // fill color set to Black
+        stroke(180); //stroke color set to Grey
+      }
+    
+      rectMode(CENTER); // set drawing mode for the shape
+      translate (mouseX - width/2, mouseY - height/2); // set the origin of the shape to the mouse position
+      
+      rotateX(angle); // rotate the shape on the X axis based on the angle variable
+      rotateY(angle * 0.3); // rotate the shape on the Y axis based on the angle variable
+      rotateZ(angle * 1.2); // rotate the shape on the Z axis based on the angle variable
+
+      box(150,150,20); // draw a box sized 150x150x20
+      
+      angle += 0.007; // increment the angle variable, which will rotate the shape
+    }
+    else if
+    (this.name === 'retrowave') // RETROWAVE VISUALS <----------
+    {
+      cursor(CROSS); // set the cursor to cross
+      if(mouseIsPressed)
+      {
+        if (mouseButton === LEFT) 
+        {
+          normalMaterial();
+          stroke(0);
+        }
+        if (mouseButton === RIGHT) 
+        {
+          fill('#B1BEC3');
+          stroke('#0066FF');
+        }
+        if (mouseButton === CENTER) 
+        {
+          sphere(150);
+          texture(skyCubeTexture);
+          stroke(0);
+        }
+      }
+      else
+      {
+        fill(0); // fill color set to Black
+        stroke(180); //stroke color set to Grey
+      }
+    
+      rectMode(CENTER); // set drawing mode for the shape
+      translate (mouseX - width/2, mouseY - height/2); // set the origin of the shape to the mouse position
+      
+      rotateX(angle); // rotate the shape on the X axis based on the angle variable
+      rotateY(angle * 0.3); // rotate the shape on the Y axis based on the angle variable
+      rotateZ(angle * 1.2); // rotate the shape on the Z axis based on the angle variable
+
+      box(150,150,20); // draw a box sized 150x150x20
+      
+      angle += 0.007; // increment the angle variable, which will rotate the shape
+    }
+    else if (this.name === 'futurefunk') // FUTUREFUNK VISUALS <----------
+    {
+      cursor(CROSS); // set the cursor to cross
+      if(mouseIsPressed)
+      {
+        if (mouseButton === LEFT) 
+        {
+          normalMaterial();
+          stroke(0);
+        }
+        if (mouseButton === RIGHT) 
+        {
+          fill('#B1BEC3');
+          stroke('#0066FF');
+        }
+        if (mouseButton === CENTER) 
+        {
+          sphere(150);
+          texture(skyCubeTexture);
+          stroke(0);
+        }
+      }
+      else
+      {
+        fill(0); // fill color set to Black
+        stroke(180); //stroke color set to Grey
+      }
+    
+      rectMode(CENTER); // set drawing mode for the shape
+      translate (mouseX - width/2, mouseY - height/2); // set the origin of the shape to the mouse position
+      
+      rotateX(angle); // rotate the shape on the X axis based on the angle variable
+      rotateY(angle * 0.3); // rotate the shape on the Y axis based on the angle variable
+      rotateZ(angle * 1.2); // rotate the shape on the Z axis based on the angle variable
+
+      box(150,150,20); // draw a box sized 150x150x20
+      
+      angle += 0.007; // increment the angle variable, which will rotate the shape
+    }
+    else if (this.name === 'house') // HOUSE VISUALS <----------
+    {
+      cursor(CROSS); // set the cursor to cross
+      if(mouseIsPressed)
+      {
+        if (mouseButton === LEFT) 
+        {
+          normalMaterial();
+          stroke(0);
+        }
+        if (mouseButton === RIGHT) 
+        {
+          fill('#B1BEC3');
+          stroke('#0066FF');
+        }
+        if (mouseButton === CENTER) 
+        {
+          sphere(150);
+          texture(skyCubeTexture);
+          stroke(0);
+        }
+      }
+      else
+      {
+        fill(0); // fill color set to Black
+        stroke(180); //stroke color set to Grey
+      }
+    
+      rectMode(CENTER); // set drawing mode for the shape
+      translate (mouseX - width/2, mouseY - height/2); // set the origin of the shape to the mouse position
+      
+      rotateX(angle); // rotate the shape on the X axis based on the angle variable
+      rotateY(angle * 0.3); // rotate the shape on the Y axis based on the angle variable
+      rotateZ(angle * 1.2); // rotate the shape on the Z axis based on the angle variable
+
+      box(150,150,20); // draw a box sized 150x150x20
+      
+      angle += 0.007; // increment the angle variable, which will rotate the shape
+    }
+    else if (this.name === 'ambiant') // AMBIANT VISUALS <----------
+    {
+      cursor(CROSS); // set the cursor to cross
+      if(mouseIsPressed)
+      {
+        if (mouseButton === LEFT) 
+        {
+          normalMaterial();
+          stroke(0);
+        }
+        if (mouseButton === RIGHT) 
+        {
+          fill('#B1BEC3');
+          stroke('#0066FF');
+        }
+        if (mouseButton === CENTER) 
+        {
+          sphere(150);
+          texture(skyCubeTexture);
+          stroke(0);
+        }
+      }
+      else
+      {
+        fill(0); // fill color set to Black
+        stroke(180); //stroke color set to Grey
+      }
+    
+      rectMode(CENTER); // set drawing mode for the shape
+      translate (mouseX - width/2, mouseY - height/2); // set the origin of the shape to the mouse position
+      
+      rotateX(angle); // rotate the shape on the X axis based on the angle variable
+      rotateY(angle * 0.3); // rotate the shape on the Y axis based on the angle variable
+      rotateZ(angle * 1.2); // rotate the shape on the Z axis based on the angle variable
+
+      box(150,150,20); // draw a box sized 150x150x20
+      
+      angle += 0.007; // increment the angle variable, which will rotate the shape
+    }
+  }
 }
 
 let synthwave;
@@ -71,7 +272,7 @@ function preload()
   //preload stuff
 
   //TEXTURES
-  cubeTexture = loadImage('assets/textures/sky.png');
+  skyCubeTexture = loadImage('assets/textures/sky.png');
 
   synthwave = new Theme('synthwave');
   synthwave.loadSounds();
@@ -104,7 +305,20 @@ function setup()
     return false;
   }
 
-  currentTheme = synthwave; // start with synthwave genre
+  // Get the URL parameters
+  let params = getURLParams();
+
+  // If a theme was selected, apply it
+  if (params.theme)
+  {
+    changeTheme(params.theme);
+  }
+  else
+  {
+    // If no theme was selected, use the default theme
+    changeTheme('default');
+  }
+  
   
   //REVERB
   // reverbTime of 3 seconds, decayRate of 0.2%
@@ -143,46 +357,7 @@ function windowResized()
 
 function draw()
 {
-  if(mouseIsPressed)
-  {
-    cursor(CROSS);
-    if (mouseButton === LEFT) 
-    {
-      normalMaterial();
-      //fill(255); // fill color white
-      stroke(0);
-    }
-    if (mouseButton === RIGHT) 
-    {
-      fill('#B1BEC3');
-      stroke('#0066FF');
-    }
-    if (mouseButton === CENTER) 
-    {
-      sphere(150);
-      texture(cubeTexture);
-      stroke(0);
-    }
-  }
-  else
-  {
-    fill(0); // fill color black
-    stroke(180);
-    cursor(ARROW);
-  }
-  
-  rectMode(CENTER);
-  
-  translate (mouseX - width/2, mouseY - height/2);
-  
-  rotateX(angle);
-  rotateY(angle * 0.3);
-  rotateZ(angle * 1.2);
-  //rect(0,0,150,100);
-
-  box(150,150,20);
-  
-  angle += 0.007;
+  currentTheme.draw();
 }
 
 
@@ -222,47 +397,48 @@ function mouseReleased()
   }
 }
 
-function keyTyped() // Detecting keyboard input and playing sounds
+function keyPressed() // Detecting keyboard input and playing sounds
 {
   //LEAD
-  if (key == 's') //plays lead
+  if (keyCode == 83) //plays lead with letter S/s
   {
     playLead();
   }
   
   //BASS
-  if (key == 'b') //plays bass
+  if (keyCode == 66) //plays bass with letter B/b
   {    
     playBass();
   }
   
   //INST1
-  if (key == 'd') //plays instrument 1
+  if (keyCode == 68) //plays instrument 1 with letter D/d
   {    
     playInst1();
   }
 
   //INST2
-  if (key == 'a') //plays instrument 2
+  if (keyCode == 65) //plays instrument 2 with letter A/a
   {    
     playInst2();
   }
 
   //INST3
-  if (key == 'w') //plays instrument 3
+  if (keyCode == 87) //plays instrument 3 with letter W/w
   {    
     playInst3();
   }
   
-  //save artwork with the P key.
-  if (key == 'p')
+  //save artwork with the P/p key.
+  if (keyCode == 80)
   {
     CaptureScreenshot();
   }
 
-  if (keyCode == 'BACKSPACE')
+  //clear canvas with the BACKSPACE key.
+  if (keyCode ===  BACKSPACE)
   {
-    canvas.clear();
+    ClearCanvasAndSound();
   }
   
   //type anything -- removed for the moment
@@ -377,7 +553,7 @@ function playInst3()
     }
 }
 
-// OTHER FUNCTIONS ---------------------------------------------
+// OTHER FUNCTIONS -----------------------------------------------
 
 function touchMoved()
 {
@@ -410,6 +586,23 @@ function CaptureScreenshot()
                   ('0' + now.getMinutes()).slice(-2) + '-' +
                   ('0' + now.getSeconds()).slice(-2);
   save("GENERATRON_design_" + timestamp + ".png");
+}
+
+function ClearCanvasAndSound()
+{
+  // If currentTheme is an object containing sounds, stop them
+  if (currentTheme)
+  {
+    for (let key in currentTheme)
+    {
+      if (currentTheme[key] && typeof currentTheme[key].stop === 'function')
+      {
+        currentTheme[key].stop();
+      }
+    }
+  }
+  this.clear();
+  return false; // prevent default browser behavior
 }
 
 function changeTheme(themeName)
