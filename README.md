@@ -8,7 +8,7 @@ When I started this project during a creative coding course in my second year of
 
 Exploring [p5.js](https://p5js.org/) and diving a bit more in web technologies was really fun. Teachers and people were so enthusiastic to see the project develop and I had big dreams for it.
 
-**The idea of mixing music and live visuals isn't new.** Generatron is an immersive experience that lets you fill a canvas with shapes, colors and sounds. It's like if a musical launchpad and a drawing canvas had a baby.
+**The idea of mixing music and live visuals isn't new.**, but Generatron is another kind of immersive experience that lets you fill a canvas with shapes, colors and sounds. It's like if a musical launchpad and a drawing canvas had a baby.
 
 At the time, I immediately made Generatron open-source. I wanted to show people people that coding an experience like Generatron wasn't that complicated.
 
@@ -19,7 +19,7 @@ Have fun!
 Launch https://generatron.cybrneon.xyz to use the experience on the web.
 
 > [!NOTE]  
-> You can also add Generatron as a Progressive Web App to your iOS, Android, Mac and Windows device.
+> You can also add Generatron as a Progressive Web App (PWA) to your iOS, Android, Mac and Windows device. You can do that by clicking on the "Install" button in the top right corner of your browser.
 
 ### Locally
 You can also run the experience locally by downloading all the source code to your machine and running a live server.
@@ -42,6 +42,7 @@ While working on the project and after your contributions, you are considered a 
 - A community driven sample repository with contributions from artists and designers, where everyone could make sounds and visuals and share them to everyone to try on Generatron.
 - A mobile focused UX for better interactions.
 - Having a better UI framework instead of plain HTML and CSS.
+- A sound AND video recorder of the canvas, with export options for different aspect ratios.
 - Implementing a store for Generatron merch to support the project.
 
 ### The GENERATRON Community
