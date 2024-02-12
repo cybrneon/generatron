@@ -339,14 +339,30 @@ generatron-p5sketch
   height: 22px;
 }
 
-.menu-info-version-and-socials
+@media (max-width: 768px)
 {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
+  .menu-info-version-and-socials
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
+
+@media (min-width: 768px)
+{
+  .menu-info-version-and-socials
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 }
 
 .menu-info-socials
@@ -494,8 +510,10 @@ generatron-p5sketch
   pointer-events: none;
 }
 
-@media (max-width: 768px) { /* Adjust 768px to your desired mobile breakpoint */
-  .key-button {
+@media (max-width: 768px)
+{
+  .key-button
+  {
     pointer-events: auto;
   }
 }

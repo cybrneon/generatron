@@ -9,11 +9,14 @@
 
 // WHISTLER 2024
 // A complete overhaul of the original Generatron, with a new design, new sounds, new features, and a new visual identity.
+// ---------------------------------------------------
+// THis is the primary p5.js sketch file for the Generatron project.
 
 
 //CODE ---------------------------------------------
 let angle = 0;
 let fr = 60;
+let amp;
 let pixelDensitySlider;
 //let contents = ""; -- Typing Text feature removed for the moment
 
@@ -74,8 +77,11 @@ class Theme
         }
         if (mouseButton === CENTER) 
         {
-          sphere(150);
-          texture(skyCubeTexture);
+          let vol = amp.getLevel();
+          let size = map(vol, 0, 1, 100, 300);
+
+          sphere(size);
+          texture(synthwaveTexture);
           stroke(0);
         }
       }
@@ -114,15 +120,18 @@ class Theme
         }
         if (mouseButton === CENTER) 
         {
-          sphere(150);
-          texture(skyCubeTexture);
-          stroke(0);
+          let vol = amp.getLevel();
+          let size = map(vol, 0, 1, 100, 300);
+
+          sphere(size);
+          texture(retrowaveTexture);
+          noStroke();
         }
       }
       else
       {
-        fill(0); // fill color set to Black
-        stroke(180); //stroke color set to Grey
+        fill(0);
+        stroke('#D500DA');
       }
     
       rectMode(CENTER); // set drawing mode for the shape
@@ -148,20 +157,23 @@ class Theme
         }
         if (mouseButton === RIGHT) 
         {
-          fill('#B1BEC3');
-          stroke('#0066FF');
+          fill('#3E3DD7');
+          stroke('#B69DC7');
         }
         if (mouseButton === CENTER) 
         {
-          sphere(150);
-          texture(skyCubeTexture);
-          stroke(0);
+          let vol = amp.getLevel();
+          let size = map(vol, 0, 1, 100, 400);
+
+          plane(size);
+          texture(futurefunkTexture);
+          noStroke();
         }
       }
       else
       {
-        fill(0); // fill color set to Black
-        stroke(180); //stroke color set to Grey
+        fill('#815BBC');
+        stroke('#D25DB6');
       }
     
       rectMode(CENTER); // set drawing mode for the shape
@@ -187,20 +199,23 @@ class Theme
         }
         if (mouseButton === RIGHT) 
         {
-          fill('#B1BEC3');
-          stroke('#0066FF');
+          fill('#7c0202');
+          stroke('#ff4800');
         }
         if (mouseButton === CENTER) 
         {
-          sphere(150);
-          texture(skyCubeTexture);
-          stroke(0);
+          let vol = amp.getLevel();
+          let size = map(vol, 0, 1, 100, 400);
+
+          sphere(size);
+          fill('#8c0070');
+          stroke('#FA00CB');
         }
       }
       else
       {
-        fill(0); // fill color set to Black
-        stroke(180); //stroke color set to Grey
+        fill('#02267F');
+        stroke('#0055ff');
       }
     
       rectMode(CENTER); // set drawing mode for the shape
@@ -231,15 +246,18 @@ class Theme
         }
         if (mouseButton === CENTER) 
         {
-          sphere(150);
-          texture(skyCubeTexture);
+          let vol = amp.getLevel();
+          let size = map(vol, 0, 1, 100, 400);
+          
+          sphere(size);
+          texture(ambiantTexture);
           stroke(0);
         }
       }
       else
       {
-        fill(0); // fill color set to Black
-        stroke(180); //stroke color set to Grey
+        fill(0);
+        stroke(180);
       }
     
       rectMode(CENTER); // set drawing mode for the shape
@@ -272,7 +290,11 @@ function preload()
   //preload stuff
 
   //TEXTURES
-  skyCubeTexture = loadImage('assets/textures/sky.png');
+  synthwaveTexture = loadImage('assets/textures/sky.png');
+  retrowaveTexture = loadImage('assets/textures/sun.png');
+  futurefunkTexture = loadImage('assets/textures/sailormoon.gif');
+  //houseTexture = loadImage('assets/textures/sky.png'); None!
+  ambiantTexture = loadImage('assets/textures/sky.png');
 
   synthwave = new Theme('synthwave');
   synthwave.loadSounds();
@@ -283,11 +305,11 @@ function preload()
   futurefunk = new Theme('futurefunk');
   futurefunk.loadSounds();
 
-  //house = new Theme('house');
-  //house.loadSounds();
+  house = new Theme('house');
+  house.loadSounds();
 
-  //ambiant = new Theme('ambiant');
-  //ambiant.loadSounds();
+  ambiant = new Theme('ambiant');
+  ambiant.loadSounds();
 }
 
 function setup()
@@ -298,6 +320,8 @@ function setup()
   //background(0); already set in style.css
   
   frameRate(fr); //Attempt to refresh at starting FPS
+
+  amp = new p5.Amplitude(); // create a new Amplitude object
     
   //disable browser right context menu
   document.oncontextmenu = function() 
@@ -476,7 +500,7 @@ attachButtonListener('inst2-button', playInst2);
 attachButtonListener('inst3-button', playInst3);
 
 var button = document.querySelector('.canvas-screenshot-button');
-button.addEventListener('click', function()
+button.addEventListener('touch', function()
 {
   CaptureScreenshot();
 });

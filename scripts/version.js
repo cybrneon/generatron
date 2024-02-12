@@ -5,9 +5,14 @@
 
 window.onload = function()
 {
-    var versionNumber = "2.0";
-    var versionCodename = "WHISTLER";
+    fetch('/manifest.json')
+    .then(response => response.json())
+    .then(data =>
+        {
+        var versionNumber = data.version;
+        var versionCodename = data.codename;
 
-    document.getElementById("version").innerHTML += " " + versionNumber + " - " + versionCodename;
-    document.getElementById("version-header").innerHTML += " " + versionNumber + " - " + versionCodename;
+        document.getElementById("version").innerHTML += " " + versionNumber + " - " + versionCodename;
+        document.getElementById("version-header").innerHTML += " " + versionNumber + " - " + versionCodename;
+        });
 }
