@@ -459,6 +459,12 @@ function keyPressed() // Detecting keyboard input and playing sounds
     CaptureScreenshot();
   }
 
+  //save artwork with the O/o key.
+  if (keyCode == 79)
+  {
+    toggleRecording();
+  }
+
   //clear canvas with the BACKSPACE key.
   if (keyCode ===  BACKSPACE)
   {
@@ -500,7 +506,7 @@ attachButtonListener('inst2-button', playInst2);
 attachButtonListener('inst3-button', playInst3);
 
 var button = document.querySelector('.canvas-screenshot-button');
-button.addEventListener('touch', function()
+button.addEventListener('click', function()
 {
   CaptureScreenshot();
 });
@@ -512,7 +518,7 @@ let recordButtonText = document.querySelector('#canvas-record-button-text');
 // Store the initial button text
 let initialButtonText = recordButtonText.textContent;
 
-recordButton.addEventListener('click', () =>
+function toggleRecording() // Recording the canvas function
 {
   if (isRecording)
   {
@@ -528,7 +534,9 @@ recordButton.addEventListener('click', () =>
     isRecording = true;
     recordButtonText.textContent = "Recording...";
   }
-});
+}
+
+recordButton.addEventListener('click', toggleRecording);
 
 
 // TRACKS FUNCTIONS ---------------------------------------------
