@@ -7,6 +7,7 @@
 // 2019-09-19  Initial version
 // 2022-03-23  Cosmetics
 // 2024-02-12  Added feature to open video in New tab instead of the experience's tab
+// 2024-02-13  Added feature to auto download video when ready
 
 class VideoRecorder {
   static record() {
@@ -97,6 +98,6 @@ class VideoRecorder {
     }
 
     // Auto download video when ready
-    // this.lnkDownload.click();
+    this.lnkDownload.click();
   }
 }
