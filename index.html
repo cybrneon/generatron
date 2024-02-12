@@ -34,6 +34,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"  type='text/css'>
   <!-- Name + SEO terms -->
   <meta name=”keywords” content=”audio-visual, immersive, experience, GENERATRON, 2.0, design, interactive, sounds, audiogenic, rythmic, retro, CYBRNEON”/>
+
   </head>
 
   <header class="header"> <!-- HEADER -->
@@ -119,7 +120,10 @@
       <div class="capture">
         <div class="capture-keys">
           <div class="key">
-            <button><i class="fa-solid fa-camera" style="font-size: 14px; margin-right: 12px;"></i>Screen Record</button>
+            <button class="canvas-record-button">
+              <i class="fa-solid fa-camera" style="font-size: 14px; margin-right: 12px;"></i>
+              <span id="canvas-record-button-text">Screen Record</span>
+            </button>
           </div>
           <div class="key">
             <button class="canvas-screenshot-button"><i class="fa-solid fa-image" style="font-size: 14px; margin-right: 12px;"></i>Screenshot (P)</button>
@@ -149,4 +153,5 @@
   <script src="/sketch.js" class="generatron-p5sketch"></script> <!-- Always at the end of the HTML so that everything loads before the sketch-->
   <script src="/scripts/script.js"></script>
   <script src="/scripts/version.js"></script>
+  <script src="/scripts/VideoRecorder.js"></script> <!-- Video Recorder by Prossel -->
 </html>

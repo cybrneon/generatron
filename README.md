@@ -18,7 +18,8 @@ Have fun!
 ### On the Web (Recommended)
 Launch https://generatron.cybrneon.xyz to use the experience on the web.
 
-You can also add Generatron as a Progressive Web App to your iOS, Android, Mac and Windows device.
+> [!NOTE]  
+> You can also add Generatron as a Progressive Web App to your iOS, Android, Mac and Windows device.
 
 ### Locally
 You can also run the experience locally by downloading all the source code to your machine and running a live server.

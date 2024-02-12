@@ -505,6 +505,31 @@ button.addEventListener('touch', function()
   CaptureScreenshot();
 });
 
+let isRecording = false; // variable to keep track of the recording state
+let recordButton = document.querySelector('.canvas-record-button');
+let recordButtonText = document.querySelector('#canvas-record-button-text');
+
+// Store the initial button text
+let initialButtonText = recordButtonText.textContent;
+
+recordButton.addEventListener('click', () =>
+{
+  if (isRecording)
+  {
+    // If the script is currently recording, stop the recording
+    VideoRecorder.stop();
+    isRecording = false;
+    recordButtonText.textContent = initialButtonText;
+  }
+  else
+  {
+    // If the script is not currently recording, start a new recording
+    VideoRecorder.record();
+    isRecording = true;
+    recordButtonText.textContent = "Recording...";
+  }
+});
+
 
 // TRACKS FUNCTIONS ---------------------------------------------
 function playLead()
