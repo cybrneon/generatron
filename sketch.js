@@ -344,11 +344,11 @@ function setup()
   }
   
   
-  //REVERB
+  //REVERB from Legacy GENERATRON
   // reverbTime of 3 seconds, decayRate of 0.2%
-  reverb = new p5.Reverb();
-  reverb.process(currentTheme.drums1, 3, 0.2);
-  reverb.process(currentTheme.bass, 3, 0.2);
+  //reverb = new p5.Reverb();
+  //reverb.process(currentTheme.drums1, 3, 0.2);
+  //reverb.process(currentTheme.bass, 3, 0.2);
   //reverb.amp(4); // turn it up!
 
   // Create a slider from 1 to 4 with a step of 1 for Canva's Pixel Density
