@@ -108,17 +108,17 @@ class Theme
       cursor(CROSS); // set the cursor to cross
       if(mouseIsPressed)
       {
-        if (mouseButton === LEFT) 
+        if (mouseButton === LEFT)
         {
           normalMaterial();
           stroke(0);
         }
-        if (mouseButton === RIGHT) 
+        if (mouseButton === RIGHT)
         {
           fill('#B1BEC3');
           stroke('#0066FF');
         }
-        if (mouseButton === CENTER) 
+        if (mouseButton === CENTER)
         {
           let vol = amp.getLevel();
           let size = map(vol, 0, 1, 100, 300);
@@ -194,8 +194,8 @@ class Theme
       {
         if (mouseButton === LEFT) 
         {
-          normalMaterial();
-          stroke(0);
+          fill('#02267F');
+          stroke('#0055ff');
         }
         if (mouseButton === RIGHT) 
         {
@@ -214,8 +214,8 @@ class Theme
       }
       else
       {
-        fill('#02267F');
-        stroke('#0055ff');
+        fill(0);
+        stroke(180);
       }
     
       rectMode(CENTER); // set drawing mode for the shape
@@ -296,6 +296,7 @@ function preload()
   //houseTexture = loadImage('assets/textures/sky.png'); None!
   ambiantTexture = loadImage('assets/textures/sky.png');
 
+  //THEMES (SOUNDS)
   synthwave = new Theme('synthwave');
   synthwave.loadSounds();
 
@@ -424,43 +425,48 @@ function mouseReleased()
 function keyPressed() // Detecting keyboard input and playing sounds
 {
   //LEAD
-  if (keyCode == 83) //plays lead with letter S/s
+  if (key.toLowerCase() === 'w') //plays lead with letter S/s
   {
+    console.log('Playing LEAD sound.');
     playLead();
   }
   
   //BASS
-  if (keyCode == 66) //plays bass with letter B/b
-  {    
+  if (key.toLowerCase() === 'b') //plays bass with letter B/b
+  {
+    console.log('Playing BASS sound.');
     playBass();
   }
   
   //INST1
-  if (keyCode == 68) //plays instrument 1 with letter D/d
-  {    
+  if (key.toLowerCase() === 'a') //plays instrument 1 with letter D/d
+  {
+    console.log('Playing INST1 sound.');
     playInst1();
   }
 
   //INST2
-  if (keyCode == 65) //plays instrument 2 with letter A/a
-  {    
+  if (key.toLowerCase() === 's') //plays instrument 2 with letter A/a
+  {
+    console.log('Playing INST2 sound.');
     playInst2();
   }
 
   //INST3
-  if (keyCode == 87) //plays instrument 3 with letter W/w
-  {    
+  if (key.toLowerCase() === 'd') //plays instrument 3 with letter W/w
+  {
+    console.log('Playing INST3 sound.');
     playInst3();
   }
   
   //save artwork with the P/p key.
-  if (keyCode == 80)
+  if (key.toLowerCase() === 'p')
   {
     CaptureScreenshot();
   }
 
   //save artwork with the O/o key.
-  if (keyCode == 79)
+  if (key.toLowerCase() === 'o')
   {
     toggleRecording();
   }
@@ -484,6 +490,7 @@ function attachButtonListener(buttonId, playSoundFunction)
 
   button.addEventListener('click', function()
   {
+    console.log(`Button ${buttonId} clicked.`);
     if (isOriginal)
     {
       this.style.background = gradient; // change color to gradient
@@ -542,16 +549,16 @@ recordButton.addEventListener('click', toggleRecording);
 // TRACKS FUNCTIONS ---------------------------------------------
 function playLead()
 {
-    if (currentTheme.lead.isPlaying())
-    {
-      //.isPlaying() returns a boolean
-      currentTheme.lead.stop();
-    }
-    else 
-    {
-      currentTheme.lead.loop();
-      currentTheme.lead.amp(0.8); //volume
-    }
+  if (currentTheme.lead.isPlaying())
+  {
+    //.isPlaying() returns a boolean
+    currentTheme.lead.stop();
+  }
+  else 
+  {
+    currentTheme.lead.loop();
+    //currentTheme.lead.amp(0.8); //volume
+  }
 }
 
 function playBass()
@@ -564,7 +571,7 @@ function playBass()
     else 
     {
       currentTheme.bass.loop();
-      currentTheme.bass.amp(0.8); //volume
+      //currentTheme.bass.amp(0.8); //volume
     }
 }
 
@@ -578,7 +585,7 @@ function playInst1()
     else 
     {
       currentTheme.inst1.loop();
-      currentTheme.inst1.amp(0.6); //volume
+      //currentTheme.inst1.amp(0.6); //volume
     }
 }
 
@@ -592,7 +599,7 @@ function playInst2()
     else 
     {
       currentTheme.inst2.loop();
-      currentTheme.inst2.amp(0.6); //volume
+      //currentTheme.inst2.amp(0.6); //volume
     }
 }
 
@@ -606,7 +613,7 @@ function playInst3()
     else 
     {
       currentTheme.inst3.loop();
-      currentTheme.inst3.amp(0.6); //volume
+      //currentTheme.inst3.amp(0.6); //volume
     }
 }
 
