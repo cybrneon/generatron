@@ -14,8 +14,12 @@ Exploring [p5.js](https://p5js.org/) and diving a bit more in web technologies w
 At the time, I immediately made Generatron open-source. I wanted to show people that coding an experience like Generatron wasn't that complicated.
 
 Have fun! :D
-
 [(Trailer)](https://youtu.be/UmbfHNBiUrY?si=hyISk1_YfCPqRyXA)
+
+Desktop (Running on Arc Browser, macOS)             |  Mobile (Running on Arc Search, iOS)
+:-------------------------:|:-------------------------:
+![](/assets/img/screenshots/generatron-pwa-screenshot1.png)  |  ![](/assets/img/screenshots/generatron-pwa-screenshot2.png)
+
 
 ### 🎟️ Themes
 Currently, there are 5 themes that you can play with in Generatron 2:
