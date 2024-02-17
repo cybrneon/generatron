@@ -70,7 +70,6 @@ h1, h2, h3, h4, h5, h6
 {
   color:white;
   text-align: left;
-  padding-left: 2rem;
 }
 
 h1
@@ -812,6 +811,17 @@ generatron-p5sketch
 {
   margin-top: 20px;
   height: 80vh;
+  padding: 64px;
+  display: flex;
+  justify-content: center;
+  background-color: #272729;
+  border-radius: 10px;
+}
+
+.about-section-half
+{
+  margin-top: 20px;
+  height: 20vh;
   padding: 64px;
   display: flex;
   justify-content: center;

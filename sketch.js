@@ -236,13 +236,13 @@ class Theme
       {
         if (mouseButton === LEFT) 
         {
-          normalMaterial();
-          stroke(0);
+          fill('#981182');
+          stroke('#E024C2');
         }
         if (mouseButton === RIGHT) 
         {
-          fill('#B1BEC3');
-          stroke('#0066FF');
+          fill('#989111');
+          stroke('#D8CE17');
         }
         if (mouseButton === CENTER) 
         {
