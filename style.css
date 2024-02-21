@@ -821,12 +821,18 @@ generatron-p5sketch
 .about-section-half
 {
   margin-top: 20px;
-  height: 20vh;
+  height: 30vh;
   padding: 64px;
   display: flex;
   justify-content: center;
   background-color: #272729;
   border-radius: 10px;
+}
+
+.about-section-half p
+{
+  font-size: 16px;
+  max-width: 85%;
 }
 
 .about-section-content
@@ -893,6 +899,7 @@ generatron-p5sketch
   align-items: center;
   justify-content: center;
   border-radius: 10px 10px 0 0;
+  gap: 15px;
 
   background-color: #272729;
 }
