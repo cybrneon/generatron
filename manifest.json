@@ -5,7 +5,7 @@
     "version": "2.0",
     "codename":"whistler",
     "default_locale": "en",
-    "description": "A plain text description",
+    "description": "The ultimate audiogenic experience and emotion-driven digital canvas.",
     "start_url": "/index.html",
     "display": "standalone",
     "theme_color": "#000000",
