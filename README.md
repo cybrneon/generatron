@@ -5,13 +5,15 @@
 #### [generatron.cybrneon.xyz](https://generatron.cybrneon.xyz/)
 
 ## 🗣️ Introduction
-When I started this project during a creative coding course in my second year of the Visual Communication Bachelor at [HEAD-Genève](https://www.hesge.ch/head/), I wanted it to be bigger than what I achieved at that moment; a simple school creative coding project.
+When I started this project during a creative coding course in my second year of the Visual Communication Bachelor at [HEAD-Genève](https://www.hesge.ch/head/), I wanted it to be bigger than what I achieved at that moment.
 
 Exploring [p5.js](https://p5js.org/) and diving a bit more in web technologies was really fun. Teachers and people were so enthusiastic to see the project develop and I had big dreams for it.
 
 **The idea of mixing music and live visuals isn't new.**, but Generatron is another kind of immersive experience that lets you fill a virtual canvas with 3D shapes, colors and sounds. It's like if a musical launchpad and a drawing canvas had a baby.
 
 At the time, I immediately made Generatron open-source. I wanted to show people that coding an experience like Generatron wasn't that complicated.
+
+The developement of the new version opens up unlimited possibilities for the future of Generatron and its community.
 
 Have fun! :D
 [(Trailer)](https://youtu.be/UmbfHNBiUrY?si=hyISk1_YfCPqRyXA)
@@ -30,6 +32,7 @@ Currently, there are 5 themes that you can play with in Generatron 2:
 - Ambiant
 
 All of the sounds were made in-house, under the [KYBRNEON](https://open.spotify.com/artist/48nqLcH2xb1ufAYrkBlTwk?si=m82mOcQyTs222c-1zkKndg) alias.
+
 **Generatron is open to collaborating with artists and designers.**
 
 ## 💿 Running Generatron
