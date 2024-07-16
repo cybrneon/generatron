@@ -21,6 +21,10 @@ document.addEventListener('click', function(event)
   }
 });
 
+document.querySelector('.menu').addEventListener('touchmove', function(event) {
+  event.stopPropagation(); // Allow touch scrolling
+}, { passive: true });
+
 /* ----------------------- User Agent Sniffing Script ----------------------- */
 
 /* NOT ENABLED, YET

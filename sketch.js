@@ -7,8 +7,8 @@
 //  | |__| | |____| |\  | |____| | \ \  / ____ \| |  | | \ \| |__| | |\  |
 //  \_____|______|_| \_|______|_|  \_\/_/    \_\_|  |_|  \_\\____/|_| \_|
 
-// WHISTLER 2024
-// A complete overhaul of the original Generatron, with a new design, new sounds, new features, and a new visual identity.
+// COBALT 2024
+// A complete overhaul of the original Generatron, with a new design, new sounds, new features, and a new visual identity (WHISTLER).
 // ---------------------------------------------------
 // THis is the primary p5.js sketch file for the Generatron project.
 

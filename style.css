@@ -198,6 +198,7 @@ generatron-p5sketch
   transition: 0.5s;
   overflow: scroll;
   z-index: 1000;
+  -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
 }
 
 .show-menu
