@@ -2,8 +2,8 @@
 {
     "manifest_version": 3,
     "name": "GENERATRON",
-    "version": "2.0",
-    "codename":"whistler",
+    "version": "2.0.1",
+    "codename":"cobalt",
     "default_locale": "en",
     "description": "The ultimate audiogenic experience and emotion-driven digital canvas.",
     "start_url": "/index.html",
