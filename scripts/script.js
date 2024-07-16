@@ -25,6 +25,41 @@ document.querySelector('.menu').addEventListener('touchmove', function(event) {
   event.stopPropagation(); // Allow touch scrolling
 }, { passive: true });
 
+
+/* ------------------------------- PWA Updater ------------------------------ */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.addEventListener('controllerchange', function() {
+    window.location.reload();
+  });
+
+  navigator.serviceWorker.register('/scripts/service-worker.js').then(function(registration) {
+    registration.onupdatefound = function() {
+      const installingWorker = registration.installing;
+      installingWorker.onstatechange = function() {
+        if (installingWorker.state === 'installed') {
+          if (navigator.serviceWorker.controller) {
+            // New update available
+            console.log('New update available');
+            if (confirm('A new version is available. Do you want to update?')) {
+              installingWorker.postMessage('skipWaiting');
+            }
+          }
+        }
+      };
+    };
+  });
+
+  navigator.serviceWorker.addEventListener('message', function(event) {
+    if (event.data === 'newVersion') {
+      if (confirm('A new version is available. Do you want to update?')) {
+        navigator.serviceWorker.controller.postMessage('skipWaiting');
+      }
+    }
+  });
+}
+
+
+
 /* ----------------------- User Agent Sniffing Script ----------------------- */
 
 /* NOT ENABLED, YET
